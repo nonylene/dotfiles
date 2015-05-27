@@ -1,0 +1,35 @@
+" 入力欄に自動フォーカスしない
+set focuscontent
+
+" Hintモード関係
+set hintchars=hjkl;gfdsa:]
+hi Hint font-family: menlo; font-size: 19px; font-weight: bold; color: #0B77F2; text-shadow: -1px 1px black, -1px -1px black, 1px 1px black, 1px -1px black; text-stroke: 1px black;
+hi HintElem color: black; background-color: powderblue;
+hi HintActive color: black; background-color: lightgreen; font-weight: bold;
+
+" ビジュアルベル使用
+set visualbell
+
+" google検索
+noremap s :open<Space>google<Space>
+noremap ,s :tabopen<Space>google<Space>
+
+" 移動量
+noremap j 5j
+noremap k 5k
+
+" back/forward
+nnoremap h H
+nnoremap l L
+
+" tab
+nnoremap H <C-p>
+nnoremap L <C-n>
+
+" undo一覧から開く
+nnoremap U :undo<Space>
+
+" reload
+map <C-R> :mapc<CR>:cmapc<CR>:imapc<CR>:source ~/.vimperatorrc<CR>
+
+javascript if (typeof hBookmark != 'undefined') liberator.loadScript('chrome://hatenabookmark/content/vimperator/plugin/hatenabookmark.js', {__proto__: this});
