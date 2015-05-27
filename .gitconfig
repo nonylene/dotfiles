@@ -16,3 +16,4 @@
     sts = status
 [core]
     pager = less
+    autocrlf = input
