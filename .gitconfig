@@ -1,0 +1,18 @@
+[include]
+    path = ~/.gituser
+[filter "media"]
+    clean = git-media-clean %f
+    smudge = git-media-smudge %f
+[color]
+    ui = auto
+[alias]
+    co = checkout
+    cob = checkout -b
+    br = branch
+    cm = commit -m
+    com = checkout master
+    cod = checkout dev
+    cp = cherry-pick
+    sts = status
+[core]
+    pager = less
