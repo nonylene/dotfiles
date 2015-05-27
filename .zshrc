@@ -53,6 +53,9 @@ zstyle ':completion:*:default' menu select=1
 # treat these words as normal chalacters
 WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
 
+# include path etc
+[ -f ~/.zshrc_server ] && source ~/.zshrc_server
+
 # ls color
 alias ls='ls --color=auto'
 eval `dircolors ~/.zsh/dircolors-solarized/dircolors.256dark`
@@ -71,6 +74,3 @@ if [ -z $TMUX ]; then
        tmux
     fi
 fi
-
-# include path etc
-[ -f ~/.zshrc_server ] && source ~/.zshrc_server
