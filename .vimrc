@@ -7,6 +7,8 @@ set title
 set backspace=start,eol,indent
 "mouse
 set mouse=a
+"no preview
+set completeopt=menuone
 
 "選択行を強調する
 set cursorline
