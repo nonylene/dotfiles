@@ -14,6 +14,7 @@
     cod = checkout dev
     cp = cherry-pick
     sts = status
+    pull = --prune
 [core]
     pager = less
     autocrlf = input
