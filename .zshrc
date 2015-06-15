@@ -5,6 +5,7 @@ alias ll='ls -l'
 alias la='ls -a'
 alias lla='ls -la'
 alias g='git'
+alias ta='tmux attach'
 
 # history
 export HISTFILE=${HOME}/.zsh_hist
