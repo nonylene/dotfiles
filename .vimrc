@@ -133,11 +133,13 @@ if has('vim_starting')
   call neobundle#end()
 endif
 
-NeoBundleFetch 'Shougo/neobundle.vim'
-NeoBundle 'Shougo/neocomplete'
-NeoBundle 'Shougo/unite.vim'
-NeoBundle 'tomasr/molokai'
-NeoBundle 'croaker/mustang-vim'
+call neobundle#begin(expand('~/.vim/bundle'))
+    NeoBundleFetch 'Shougo/neobundle.vim'
+    NeoBundle 'Shougo/neocomplete'
+    NeoBundle 'Shougo/unite.vim'
+    NeoBundle 'tomasr/molokai'
+    NeoBundle 'croaker/mustang-vim'
+call neobundle#end()
 
 filetype plugin indent on
 
