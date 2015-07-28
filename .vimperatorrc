@@ -15,12 +15,15 @@ noremap s :open<Space>google<Space>
 noremap ,s :tabopen<Space>google<Space>
 
 " 移動量
-noremap j 5j
-noremap k 5k
+nnoremap j 5j
+nnoremap k 5k
 
 " back/forward
 nnoremap h H
 nnoremap l L
+
+" open b!
+nnoremap m :hb<Space>
 
 " tab
 nnoremap H <C-p>
