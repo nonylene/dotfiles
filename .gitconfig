@@ -14,6 +14,7 @@
     cod = checkout dev
     cp = cherry-pick
     sts = status
+    df = diff
     pull = pull --prune
 [core]
     pager = less
