@@ -15,7 +15,7 @@
     cp = cherry-pick
     sts = status
     df = diff
-    pull = pull --prune
+    pp = pull --prune
 [core]
     pager = less
     autocrlf = input
