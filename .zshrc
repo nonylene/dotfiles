@@ -23,6 +23,7 @@ RPROMPT='[%n@%m]'
 
 # vim-oriented
 bindkey -v
+bindkey '^?' backward-delete-char
 
 # completion commands
 autoload -U compinit; compinit
