@@ -11,3 +11,9 @@ if [ ! -e ~/.vim/bundle ];then
     git clone https://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
     echo "Please :NeoBundleInstall on vim!"
 fi
+
+if [ ! -e ~/.zsh ];then
+    mkdir ~/.zsh
+    git clone https://github.com/zsh-users/zsh-syntax-highlighting ~/.zsh/zsh-syntax-highlighting
+    git clone https://github.com/seebi/dircolors-solarized ~/.zsh/dircolors-solarized
+fi
