@@ -15,6 +15,7 @@
     cp = cherry-pick
     sts = status
     df = diff
+    dfc = diff --cached
     pp = pull --prune
 [core]
     pager = less
