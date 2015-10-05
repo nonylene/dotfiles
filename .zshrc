@@ -56,6 +56,9 @@ zstyle ':completion:*:default' menu select=1
 # treat these words as normal chalacters
 WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
 
+## suppress overlapping
+typeset -U PATH
+
 # include path etc
 [ -f ~/.zshrc_server ] && source ~/.zshrc_server
 
