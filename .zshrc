@@ -19,9 +19,20 @@ setopt EXTENDED_HISTORY
 # ENGLISH
 export LANG=en_US.UTF-8
 
+# vcs_info
+autoload -Uz vcs_info
+setopt prompt_subst
+zstyle ':vcs_info:*' enable git hg #svn bzr
+zstyle ':vcs_info:(git):*' formats '[%F{green}%b%f]'
+zstyle ':vcs_info:(git):*' actionformats '[%F{green}%b%f(%F{red}%a%f)]'
+zstyle ':vcs_info:*' formats '[%s:%F{green}%b%f]'
+zstyle ':vcs_info:*' actionformats '[%s:%F{green}%b%f(%F{red}%a%f)]'
+
+precmd() {vcs_info}
+
 # prompt
 PROMPT='%~ > '
-RPROMPT='[%n@%m]'
+RPROMPT='${vcs_info_msg_0_}[%n@%m]'
 
 # vim-oriented
 bindkey -v
