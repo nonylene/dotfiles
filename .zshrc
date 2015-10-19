@@ -23,16 +23,24 @@ export LANG=en_US.UTF-8
 autoload -Uz vcs_info
 setopt prompt_subst
 zstyle ':vcs_info:*' enable git hg #svn bzr
-zstyle ':vcs_info:(git):*' formats '[%F{green}%b%f]'
-zstyle ':vcs_info:(git):*' actionformats '[%F{green}%b%f(%F{red}%a%f)]'
-zstyle ':vcs_info:*' formats '[%s:%F{green}%b%f]'
-zstyle ':vcs_info:*' actionformats '[%s:%F{green}%b%f(%F{red}%a%f)]'
+zstyle ':vcs_info:(git):*' formats '
+[%F{yellow}%r: %b%f]
+'
+zstyle ':vcs_info:(git):*' actionformats '
+[%F{yellow}%r: %b%f(%F{red}%a%f)]
+'
+zstyle ':vcs_info:*' formats '
+[%s:%F{yellow}%r: %b%f]
+'
+zstyle ':vcs_info:*' actionformats '
+[%s:%F{yellow}%r: %b%f(%F{red}%a%f)]
+'
 
 precmd() {vcs_info}
 
 # prompt
-PROMPT='%~ > '
-RPROMPT='${vcs_info_msg_0_}[%n@%m]'
+PROMPT='${vcs_info_msg_0_}%~ > '
+RPROMPT='[%n@%18>..>%m%>>]'
 
 # vim-oriented
 bindkey -v
