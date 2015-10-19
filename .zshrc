@@ -19,7 +19,7 @@ setopt EXTENDED_HISTORY
 export LANG=en_US.UTF-8
 
 # prompt
-PROMPT='%d > '
+PROMPT='%~ > '
 RPROMPT='[%n@%m]'
 
 # vim-oriented
