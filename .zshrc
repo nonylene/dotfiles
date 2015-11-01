@@ -27,13 +27,13 @@ zstyle ':vcs_info:(git):*' formats '
 [%F{yellow}%r: %b%f]
 '
 zstyle ':vcs_info:(git):*' actionformats '
-[%F{yellow}%r: %b%f(%F{red}%a%f)]
+[%F{yellow}%r: %b%f (%F{red}%a%f)]
 '
 zstyle ':vcs_info:*' formats '
 [%s:%F{yellow}%r: %b%f]
 '
 zstyle ':vcs_info:*' actionformats '
-[%s:%F{yellow}%r: %b%f(%F{red}%a%f)]
+[%s:%F{yellow}%r: %b%f (%F{red}%a%f)]
 '
 
 precmd() {vcs_info}
