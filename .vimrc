@@ -139,6 +139,7 @@ call neobundle#begin(expand('~/.vim/bundle'))
     NeoBundle 'Shougo/unite.vim'
     NeoBundle 'tomasr/molokai'
     NeoBundle 'croaker/mustang-vim'
+    NeoBundle 'airblade/vim-gitgutter'
 call neobundle#end()
 
 filetype plugin indent on
@@ -149,6 +150,10 @@ let g:neocomplcache_enable_smart_case = 2
 let g:neocomplcache_min_syntax_length = 3
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 
+"gitgutter
+let g:gitgutter_realtime = 1
+let g:gitgutter_eager = 1
+let g:gitgutter_sign_column_always = 1
 
 "colorscheme
 colorscheme molokai
