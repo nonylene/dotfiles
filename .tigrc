@@ -1,1 +1,1 @@
-bind main C !@bash -c "echo -n '%(commit)' | pbcopy"
+bind main C !@bash -c "echo -n %(commit) | pbcopy"

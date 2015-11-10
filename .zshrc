@@ -100,3 +100,6 @@ if [ -z $TMUX ]; then
        tmux
     fi
 fi
+
+# added by travis gem
+[ -f /Users/nonylene/.travis/travis.sh ] && source /Users/nonylene/.travis/travis.sh
