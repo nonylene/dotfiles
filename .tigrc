@@ -1,0 +1,1 @@
+bind main C !@bash -c "echo -n '%(commit)' | pbcopy"
