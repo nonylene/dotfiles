@@ -10,6 +10,7 @@
     cob = checkout -b
     br = branch
     cm = commit -m
+    ca = commit --amend
     com = checkout master
     cod = checkout dev
     cp = cherry-pick
