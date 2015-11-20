@@ -20,3 +20,4 @@
 [core]
     pager = less
     autocrlf = input
+    excludesfile = ~/.gitignore
