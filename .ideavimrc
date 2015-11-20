@@ -1,32 +1,6 @@
-set nocompatible
-set encoding=utf-8
-set nobackup
-set number
-set title
-
-"選択行を強調する
-set cursorline
-
-"括弧の対応
-set showmatch
-
-"--------tab--------
-"tabをspaceにするなど
-set expandtab
-set tabstop=4
-set shiftwidth=4
-set softtabstop=4
-"tab空白表示
-set list
-set listchars=tab:>-,trail:_
-
-"自動インデント
-set autoindent
-set smartindent
-
 "-------Search--------
 "インクリメンタルサーチを有効にする
-set incsearch
+"set incsearch
 "大文字小文字を区別しない
 set ignorecase
 "大文字で検索されたら対象を大文字限定にする
@@ -38,10 +12,4 @@ set hlsearch
 
 "検索やコマンドの履歴
 set history=50
-
-"pastemode
-set pastetoggle=<C-p>
-
-"補完設定
-set wildmode=longest,list,full
 
