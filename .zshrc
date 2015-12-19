@@ -12,7 +12,7 @@ alias ta='tmux attach'
 # history
 export HISTFILE=${HOME}/.zsh_hist
 export HISTSIZE=2000
-export SAVEHIST=4000
+export SAVEHIST=10000
 setopt hist_ignore_dups
 setopt EXTENDED_HISTORY
 
