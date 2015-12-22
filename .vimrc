@@ -36,6 +36,7 @@ au BufNewFile,BufRead *.php set expandtab tabstop=2 shiftwidth=2 softtabstop=2
 au BufNewFile,BufRead *.html set expandtab tabstop=2 shiftwidth=2 softtabstop=2
 au BufNewFile,BufRead *.md set expandtab tabstop=2 shiftwidth=2 softtabstop=2
 au BufNewFile,BufRead *.js set expandtab tabstop=2 shiftwidth=2 softtabstop=2
+au BufNewFile,BufRead *.yml set expandtab tabstop=2 shiftwidth=2 softtabstop=2
 
 "-------Search--------
 "インクリメンタルサーチを有効にする
