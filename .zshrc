@@ -19,6 +19,15 @@ setopt EXTENDED_HISTORY
 # ENGLISH
 export LANG=en_US.UTF-8
 
+# tmux
+if [ -z $TMUX ]; then
+    if $(tmux has-session); then
+       tmux new-session
+    else
+       tmux
+    fi
+fi
+
 # vcs_info
 autoload -Uz vcs_info
 setopt prompt_subst
@@ -91,15 +100,6 @@ fi
 
 # command color
 source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
-# tmux
-if [ -z $TMUX ]; then
-    if $(tmux has-session); then
-       tmux new-session
-    else
-       tmux
-    fi
-fi
 
 # added by travis gem
 [ -f /Users/nonylene/.travis/travis.sh ] && source /Users/nonylene/.travis/travis.sh
