@@ -12,7 +12,7 @@ set visualbell
 
 " google検索
 noremap s :open<Space>google<Space>
-noremap ,s :tabopen<Space>google<Space>
+noremap S :tabopen<Space>google<Space>
 
 " 移動量
 nnoremap j 5j
@@ -24,6 +24,7 @@ nnoremap l L
 
 " open b!
 nnoremap m :hb<Space>
+nnoremap M :hbtabsearch<Space>
 
 " tab
 nnoremap H <C-p>
