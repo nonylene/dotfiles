@@ -49,7 +49,7 @@ zstyle ':vcs_info:*' actionformats '
 precmd() {vcs_info}
 
 # prompt
-PROMPT='${vcs_info_msg_0_}%~ > '
+PROMPT='${vcs_info_msg_0_}%~ %(!.#.>) '
 RPROMPT='[%n@%18>..>%m%>>]'
 
 # vim-oriented
