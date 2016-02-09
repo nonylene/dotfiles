@@ -1,3 +1,4 @@
+export TERM=xterm-256color
 export EDITOR=vim
 alias 'v'='vim'
 alias 'vi'='vim'
