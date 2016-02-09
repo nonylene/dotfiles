@@ -22,3 +22,6 @@
     pager = less
     autocrlf = input
     excludesfile = ~/.gitignore
+[user]
+	email = cookie.speaker@gmail.com
+	name = nonylene
