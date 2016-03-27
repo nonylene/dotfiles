@@ -1,3 +1,5 @@
+emulate sh -c 'source /etc/profile'
+
 export EDITOR=vim
 alias 'v'='vim'
 alias 'vi'='vim'
