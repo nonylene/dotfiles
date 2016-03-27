@@ -21,6 +21,9 @@ setopt EXTENDED_HISTORY
 # ENGLISH
 export LANG=en_US.UTF-8
 
+# long command
+export REPORTTIME=1
+
 # tmux
 if [ -z $TMUX ]; then
     if $(tmux has-session); then
