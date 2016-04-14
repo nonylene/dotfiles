@@ -1,0 +1,16 @@
+set number
+
+set expandtab
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
+
+"-------Search--------
+set incsearch
+set ignorecase
+" large case -> large search
+set smartcase
+" return to first
+set wrapscan
+" highlight keyword
+set hlsearch
