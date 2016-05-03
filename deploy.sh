@@ -8,6 +8,14 @@ for f in .*;do
     fi
 done
 
+if [ ! -f ~/.zshrc_server ];then
+    touch ~/.zshrc_server
+fi
+
+if [ ! -f ~/.tmux-server.conf ];then
+    touch ~/.tmux-server.conf
+fi
+
 if [ ! -e ~/.vim/bundle ];then
     mkdir -p ~/.vim/bundle
     git clone https://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
