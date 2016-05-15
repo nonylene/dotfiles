@@ -57,8 +57,8 @@ PROMPT='${vcs_info_msg_0_}%~ %(!.#.>) '
 RPROMPT='[%n@%18>..>%m%>>]'
 
 # vim-oriented
-bindkey -v
-bindkey '^?' backward-delete-char
+#bindkey -v
+#bindkey '^?' backward-delete-char
 
 # completion commands
 autoload -U compinit; compinit
