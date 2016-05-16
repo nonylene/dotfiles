@@ -56,6 +56,7 @@ precmd() {vcs_info}
 PROMPT='${vcs_info_msg_0_}%~ %(!.#.>) '
 RPROMPT='[%n@%18>..>%m%>>]'
 
+bindkey -e
 # vim-oriented
 #bindkey -v
 #bindkey '^?' backward-delete-char
