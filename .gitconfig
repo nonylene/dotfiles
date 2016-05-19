@@ -18,6 +18,7 @@
     df = diff
     dfc = diff --cached
     pp = pull --prune
+    sth = status
 [core]
     pager = less
     autocrlf = input
