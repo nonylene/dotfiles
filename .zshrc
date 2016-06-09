@@ -104,7 +104,7 @@ if [ -n "$LS_COLORS" ]; then
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 fi
 
-# grep color, cvs
+# grep color
 alias grep='grep --color=auto'
 
 # command color
