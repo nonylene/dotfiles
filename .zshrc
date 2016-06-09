@@ -104,6 +104,9 @@ if [ -n "$LS_COLORS" ]; then
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 fi
 
+# grep color, cvs
+alias grep='grep --color=auto'
+
 # command color
 source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
