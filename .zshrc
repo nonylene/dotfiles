@@ -9,6 +9,7 @@ alias ll='ls -l'
 alias la='ls -a'
 alias lla='ls -la'
 alias g='git'
+alias e='exit'
 alias ta='tmux attach'
 
 # history
