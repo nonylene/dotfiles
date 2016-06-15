@@ -19,6 +19,7 @@
     dfc = diff --cached
     pp = pull --prune
     sta = stash
+    au = add -u
 [core]
     pager = less
     autocrlf = input
