@@ -14,7 +14,7 @@
     com = checkout master
     cod = checkout dev
     cp = cherry-pick
-    sts = status
+    s = status
     df = diff
     dfc = diff --cached
     pp = pull --prune
