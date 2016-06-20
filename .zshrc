@@ -25,6 +25,9 @@ export LANG=en_US.UTF-8
 # long command
 export REPORTTIME=1
 
+# include path etc
+[ -f ~/.zshrc_server ] && source ~/.zshrc_server
+
 # tmux
 if [ -z $TMUX ]; then
     if $(tmux has-session); then
@@ -94,9 +97,6 @@ WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
 
 ## suppress overlapping
 typeset -U PATH
-
-# include path etc
-[ -f ~/.zshrc_server ] && source ~/.zshrc_server
 
 # ls color
 alias ls='ls --color=auto'
