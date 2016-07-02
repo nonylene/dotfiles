@@ -12,6 +12,8 @@ alias g='git'
 alias e='exit'
 alias ta='tmux attach'
 
+setopt PRINT_EXIT_VALUE
+
 # history
 export HISTFILE=${HOME}/.zsh_hist
 export HISTSIZE=2000
