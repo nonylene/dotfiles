@@ -20,6 +20,7 @@
     pp = pull --prune
     sta = stash
     au = add -u
+    aa = add -u
 [core]
     pager = less
     autocrlf = input
