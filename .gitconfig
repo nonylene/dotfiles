@@ -21,6 +21,7 @@
     sta = stash
     au = add -u
     aa = add -A
+    ap = add -p
 [core]
     pager = less
     autocrlf = input
