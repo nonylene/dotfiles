@@ -13,6 +13,10 @@ alias e='exit'
 alias c='cd'
 alias ta='tmux attach'
 
+function gr {
+    grep -r "$@" ./
+}
+
 setopt PRINT_EXIT_VALUE
 
 # history
