@@ -118,6 +118,3 @@ alias grep='grep --color=auto'
 
 # command color
 source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
-# added by travis gem
-[ -f /Users/nonylene/.travis/travis.sh ] && source /Users/nonylene/.travis/travis.sh
