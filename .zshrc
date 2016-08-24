@@ -14,7 +14,7 @@ alias c='cd'
 alias ta='tmux attach'
 
 function gr {
-    grep -r "$@" ./
+    grep -rI "$@" ./
 }
 
 setopt PRINT_EXIT_VALUE
