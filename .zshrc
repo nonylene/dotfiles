@@ -13,6 +13,9 @@ alias e='exit'
 alias c='cd'
 alias ta='tmux attach'
 
+# grep color
+alias grep='grep --color=auto'
+
 function gr {
     grep -rI "$@" ./
 }
@@ -112,9 +115,6 @@ eval `dircolors ~/.zsh/dircolors-solarized/dircolors.256dark`
 if [ -n "$LS_COLORS" ]; then
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 fi
-
-# grep color
-alias grep='grep --color=auto'
 
 # command color
 source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
