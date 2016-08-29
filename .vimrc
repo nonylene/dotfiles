@@ -144,6 +144,7 @@ call neobundle#begin(expand('~/.vim/bundle'))
     NeoBundle 'airblade/vim-gitgutter'
     NeoBundle 'itchyny/vim-cursorword'
     NeoBundle 'tomtom/tcomment_vim'
+    NeoBundle 'tpope/vim-fugitive'
 call neobundle#end()
 
 filetype plugin indent on
