@@ -20,6 +20,10 @@ function gr {
     grep -rI "$@" ./
 }
 
+function fin {
+    find ./  -name "*$@*"
+}
+
 setopt PRINT_EXIT_VALUE
 
 # history
@@ -31,6 +35,7 @@ setopt EXTENDED_HISTORY
 
 # ENGLISH
 export LANG=en_US.UTF-8
+export LC_CTYPE=en_US.UTF-8
 
 # long command
 export REPORTTIME=1
