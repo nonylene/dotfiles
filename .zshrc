@@ -21,7 +21,7 @@ function gr {
 }
 
 function fin {
-    find ./  -name "*$@*"
+    find ./  -name "*$@*" | grep "$@"
 }
 
 setopt PRINT_EXIT_VALUE
