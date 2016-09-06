@@ -17,7 +17,7 @@ alias ta='tmux attach'
 alias grep='grep --color=auto'
 
 function gr {
-    grep -rI "$@" ./
+    grep -rI --exclude-dir={.git,"*vendor/bundle*"} "$@" ./
 }
 
 function fin {
@@ -39,6 +39,10 @@ export LC_CTYPE=en_US.UTF-8
 
 # long command
 export REPORTTIME=1
+
+# gopath
+export GOPATH="${HOME}/.go"
+export PATH="$GOPATH/bin:$PATH"
 
 # include path etc
 [ -f ~/.zshrc_server ] && source ~/.zshrc_server
