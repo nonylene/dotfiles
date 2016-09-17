@@ -22,6 +22,9 @@ if [ ! -e ~/.vim/bundle ];then
     echo "Please :NeoBundleInstall on vim!"
 fi
 
+# show error on initial execute due to dependencies
+echo y | vim +NeoBundleInstall +qall
+
 if [ ! -e ~/.zsh ];then
     mkdir ~/.zsh
     git clone https://github.com/zsh-users/zsh-syntax-highlighting ~/.zsh/zsh-syntax-highlighting
