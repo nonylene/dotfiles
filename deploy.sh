@@ -19,7 +19,6 @@ fi
 if [ ! -e ~/.vim/bundle ];then
     mkdir -p ~/.vim/bundle
     git clone https://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
-    echo "Please :NeoBundleInstall on vim!"
 fi
 
 # show error on initial execute due to dependencies
