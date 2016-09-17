@@ -117,6 +117,7 @@ WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
 
 ## suppress overlapping
 typeset -U PATH
+export PATH="$HOME/local/bin:$PATH"
 
 # ls color
 alias ls='ls --color=auto'
