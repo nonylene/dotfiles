@@ -11,6 +11,7 @@ alias lla='ll -a'
 alias g='git'
 alias e='exit'
 alias c='cd'
+alias b='bundle'
 alias ta='tmux attach'
 
 # grep color
