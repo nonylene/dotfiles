@@ -4,7 +4,6 @@ export EDITOR=vim
 alias 'v'='vim'
 alias 'vi'='vim'
 alias py='python3'
-alias glog='git log --graph --all --format="%x09%C(cyan bold)%an%Creset%x09%C(yellow)%h%Creset %C(magenta reverse)%d%Creset %s"'
 alias ll='ls -lh'
 alias la='ll -a'
 alias lla='ll -a'
