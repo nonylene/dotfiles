@@ -6,7 +6,7 @@ set title
 "backspace
 set backspace=start,eol,indent
 " indent when wrap
-set breakindent
+"set breakindent
 "mouse
 set mouse=a
 "no preview
