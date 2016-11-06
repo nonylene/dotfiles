@@ -30,7 +30,7 @@ set listchars=tab:>-,trail:_
 
 "自動インデント
 set autoindent
-set smartindent
+set cindent
 
 "file分け
 au BufNewFile,BufRead *.css set expandtab tabstop=2 shiftwidth=2 softtabstop=2
