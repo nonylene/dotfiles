@@ -9,7 +9,7 @@ alias la='ll -a'
 alias lla='ll -a'
 alias g='git'
 alias e='exit'
-alias c='cd'
+alias c='cat'
 alias b='bundle'
 alias ta='tmux attach'
 
