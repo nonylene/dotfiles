@@ -1,7 +1,7 @@
 # deploy
 
 ```bash
-$ bash deploy.sh
+$ ./deploy.sh
 ```
 
 # licence
