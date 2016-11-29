@@ -2,9 +2,24 @@
 
 cd `dirname $0`
 
-for f in .*;do
-    if  [[ $f =~ \.[a-zA-Z0-9]+ ]] && [ -f $f ];then
-        ln -s ~/dotfiles/$f ~/$f
+# include dot files in glob ("*")
+# .. and . is not included with "*"
+shopt -s dotglob
+
+function link_file_or_reccur() {
+    for f in $1/*; do
+        if [[ $f != *.swp ]]; then
+            if [ -f $f ]; then ln -s ~/dotfiles/$f ~/$f; fi
+            if [ -d $f ]; then mkdir ~/$f; link_file_or_reccur $f; fi
+        fi
+    done
+}
+
+# dot files or directory only
+for f in .[!.]*; do
+    if [[ $f != .git ]] && [[ $f != *.swp  ]]; then
+        if [ -f $f ]; then ln -s ~/dotfiles/$f ~/$f; fi
+        if [ -d $f ]; then mkdir ~/$f; link_file_or_reccur $f; fi
     fi
 done
 
