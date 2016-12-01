@@ -17,7 +17,7 @@ alias ta='tmux attach'
 alias grep='grep --color=auto'
 
 function gr {
-    grep -rI --exclude-dir={.git,"*vendor/bundle*"} "$@" ./
+    grep -rI --exclude-dir={.git,vendor} "$@" ./
 }
 
 function fin {
@@ -36,6 +36,7 @@ setopt EXTENDED_HISTORY
 # ENGLISH
 export LANG=en_US.UTF-8
 export LC_CTYPE=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
 
 # long command
 export REPORTTIME=1
