@@ -127,29 +127,37 @@ noremap! <Esc>OM <Enter>
 "inoremap '' ''<Left>
 "inoremap <> <><Left>
 
-" NeoBundle
-filetype plugin indent off
+" dein
+let dein_base_dir = $HOME."/.vim/dein"
+let dein_repo_dir = dein_base_dir."/repos/github.com/Shougo/dein.vim"
 
-if has('vim_starting')
-  set runtimepath+=~/.vim/bundle/neobundle.vim
-  call neobundle#begin(expand('~/.vim/bundle'))
-    NeoBundleFetch 'Shougo/neobundle.vim'
-  call neobundle#end()
+" append dein_repo_dir
+" use exe to evaluate variable
+exe "set runtimepath+=".dein_repo_dir
+
+"filetype off called automatically
+call dein#begin(dein_base_dir)
+
+call dein#add(dein_base_dir)
+call dein#add('Shougo/neocomplete')
+call dein#add('Shougo/unite.vim')
+call dein#add('tomasr/molokai')
+call dein#add('croaker/mustang-vim')
+call dein#add('airblade/vim-gitgutter')
+call dein#add('itchyny/vim-cursorword')
+call dein#add('tomtom/tcomment_vim')
+call dein#add('tpope/vim-fugitive')
+
+call dein#end()
+
+if dein#check_install()
+  call dein#install()
 endif
 
-call neobundle#begin(expand('~/.vim/bundle'))
-    NeoBundleFetch 'Shougo/neobundle.vim'
-    NeoBundle 'Shougo/neocomplete'
-    NeoBundle 'Shougo/unite.vim'
-    NeoBundle 'tomasr/molokai'
-    NeoBundle 'croaker/mustang-vim'
-    NeoBundle 'airblade/vim-gitgutter'
-    NeoBundle 'itchyny/vim-cursorword'
-    NeoBundle 'tomtom/tcomment_vim'
-    NeoBundle 'tpope/vim-fugitive'
-call neobundle#end()
-
 filetype plugin indent on
+
+unlet dein_base_dir
+unlet dein_repo_dir
 
 "neocomplete
 let g:neocomplete#enable_at_startup = 1

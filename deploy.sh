@@ -31,13 +31,11 @@ if [ ! -f ~/.tmux-server.conf ];then
     touch ~/.tmux-server.conf
 fi
 
-if [ ! -e ~/.vim/bundle ];then
-    mkdir -p ~/.vim/bundle
-    git clone https://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
+dein_dir="$HOME/.vim/dein/repos/github.com/Shougo/dein.vim"
+if [ ! -e $dein_dir ];then
+    mkdir -p $dein_dir
+    git clone https://github.com/Shougo/dein.vim $dein_dir
 fi
-
-# show error on initial execute due to dependencies
-echo y | vim +NeoBundleInstall +qall
 
 if [ ! -e ~/.zsh ];then
     mkdir ~/.zsh
