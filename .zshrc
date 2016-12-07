@@ -1,6 +1,7 @@
 emulate sh -c 'source /etc/profile'
 
 export EDITOR=vim
+export PAGER="less -R"
 alias 'v'='vim'
 alias 'vi'='vim'
 alias py='python3'
