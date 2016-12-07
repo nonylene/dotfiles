@@ -1,7 +1,13 @@
 emulate sh -c 'source /etc/profile'
 
 export EDITOR=vim
-export PAGER="less -R"
+# i : ignore case
+# M : long prompt
+# R : colorize
+# X : do not clear screen
+# F : quit if text is less than one screen
+export LESS='-iMRXF'
+export PAGER=less
 alias 'v'='vim'
 alias 'vi'='vim'
 alias py='python3'
