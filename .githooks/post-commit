@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+exec < /dev/tty
+echo -n "push? [y/n]: "
+read answer_push
+if [[ $answer_push == y* ]]; then
+    default_rb="origin `git symbolic-ref --short HEAD`"
+    echo -n "remote/branch? [$default_rb]: "
+    read push_rb
+    if [[ -z "$push_rb" ]]; then push_rb="$default_rb"; fi
+    run_command="git push $push_rb"
+    echo -e "\e[32m$run_command\e[m"
+    eval $run_command
+fi
+exec <&-
