@@ -8,7 +8,7 @@ if [[ $answer_push == y* ]]; then
     read push_rb
     if [[ -z "$push_rb" ]]; then push_rb="$default_rb"; fi
     run_command="git push $push_rb"
-    echo $'\e[32m$run_command\e[m'
+    echo $'\e[32m'"$run_command"$'\e[m'
     eval $run_command
 fi
 exec <&-
