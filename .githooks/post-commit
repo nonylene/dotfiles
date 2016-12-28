@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+set -eu
+
 exec < /dev/tty
 echo -n "push? [y/n]: "
 read answer_push
