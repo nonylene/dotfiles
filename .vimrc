@@ -156,7 +156,6 @@ endif
 
 filetype plugin indent on
 
-unlet dein_base_dir
 unlet dein_repo_dir
 
 "neocomplete
