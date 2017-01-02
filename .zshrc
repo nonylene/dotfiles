@@ -41,7 +41,7 @@ setopt PRINT_EXIT_VALUE
 
 # history
 export HISTFILE=${HOME}/.zsh_hist
-export HISTSIZE=2000
+export HISTSIZE=3000
 export SAVEHIST=10000
 setopt hist_ignore_dups
 setopt inc_append_history
