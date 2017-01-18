@@ -101,41 +101,6 @@ noremap! ' 7
 noremap! ( 8
 noremap! ) 9
 
-"tenkeyの設定
-noremap <Esc>Oq 1
-noremap <Esc>Or 2
-noremap <Esc>Os 3
-noremap <Esc>Ot 4
-noremap <Esc>Ou 5
-noremap <Esc>Ov 6
-noremap <Esc>Ow 7
-noremap <Esc>Ox 8
-noremap <Esc>Oy 9
-noremap <Esc>Op 0
-noremap <Esc>On .
-noremap <Esc>OQ /
-noremap <Esc>OR *
-noremap <Esc>Ol +
-noremap <Esc>OS -
-noremap <Esc>OM <Enter>
-noremap! <Esc>Oq 1
-noremap! <Esc>Or 2
-noremap! <Esc>Os 3
-noremap! <Esc>Ot 4
-noremap! <Esc>Ou 5
-noremap! <Esc>Ov 6
-noremap! <Esc>Ow 7
-noremap! <Esc>Ox 8
-noremap! <Esc>Oy 9
-noremap! <Esc>Op 0
-noremap! <Esc>On .
-noremap! <Esc>OQ /
-noremap! <Esc>OR *
-noremap! <Esc>Ol +
-noremap! <Esc>OS -
-noremap! <Esc>OM <Enter>
-
-
 " dein
 let dein_base_dir = $HOME."/.vim/dein"
 let dein_repo_dir = dein_base_dir."/repos/github.com/Shougo/dein.vim"
