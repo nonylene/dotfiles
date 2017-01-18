@@ -70,7 +70,7 @@ set wildmode=longest,list,full
 " esc to c-f
 inoremap <C-f> <Esc>
 " remove highlights
-nnoremap <Esc> :noh<CR>
+nnoremap <Esc><Esc> <C-u>:noh<CR>
 
 " brackets and quotes
 inoremap { {}<Left>
