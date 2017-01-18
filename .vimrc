@@ -15,6 +15,11 @@ set completeopt=menuone
 "選択行を強調する
 set cursorline
 
+" always show status bar
+set laststatus=2
+" remove vim mode information
+set noshowmode
+
 "括弧の対応
 set showmatch
 
@@ -115,6 +120,7 @@ call dein#add('tomasr/molokai')
 call dein#add('croaker/mustang-vim')
 call dein#add('airblade/vim-gitgutter')
 call dein#add('itchyny/vim-cursorword')
+call dein#add('itchyny/lightline.vim')
 call dein#add('tomtom/tcomment_vim')
 call dein#add('tpope/vim-fugitive')
 
@@ -138,6 +144,37 @@ inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 let g:gitgutter_realtime = 1
 let g:gitgutter_eager = 1
 let g:gitgutter_sign_column_always = 1
+
+" lightline
+let g:lightline = {
+      \ 'component': {
+      \   'readonly': '%{&readonly?"ro":""}',
+      \   'total_lines': '%L',
+      \ },
+      \ 'component_function': {
+      \   'git_path': 'GitRelativePath',
+      \ },
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ], [ 'git_path' ], [] ],
+      \   'right': [ [], [], [ 'fileformat', 'fileencoding', 'filetype', 'total_lines' ] ],
+      \ },
+      \}
+
+function! GitRelativePath()
+  try
+    let git_work_tree = fugitive#repo().tree()
+    let rel_path = substitute(expand('%:p'), l:git_work_tree.'/', "G:", "")
+  catch
+    let rel_path = expand('%:~')
+  endtry
+
+  let max_len = winwidth(0) - 40
+  if strlen(rel_path) > max_len
+    return '<'.rel_path[-max_len:]
+  else
+    return rel_path
+  endif
+endfunction
 
 "colorscheme
 colorscheme molokai
