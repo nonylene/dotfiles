@@ -73,25 +73,32 @@ inoremap <C-f> <Esc>
 nnoremap <Esc><Esc> <C-u>:noh<CR>
 
 " brackets and quotes
-inoremap { {}<Left>
-inoremap [ []<Left>
-inoremap <SID>parenthese ()<Left>
-cnoremap <SID>parenthese (
-inoremap <SID>double_quote ""<Left>
-cnoremap <SID>double_quote "
-inoremap <SID>single_quote ''<Left>
-cnoremap <SID>single_quote '
+" inoremap { {}<Left>
+" inoremap [ []<Left>
+" inoremap <SID>parenthese ()<Esc>i
+" cnoremap <SID>parenthese (
+" inoremap <SID>double_quote ""<Left>
+" cnoremap <SID>double_quote "
+" inoremap <SID>single_quote ''<Left>
+" cnoremap <SID>single_quote '
 
 "1とかの入れ替え
 noremap! 1 !
-noremap! <script> 2 <SID>double_quote
+" noremap! <script> 2 <SID>double_quote
+imap 2 <Plug>delimitMate"
+cnoremap 2 "
 noremap! 3 #
 noremap! 4 $
 noremap! 5 %
 noremap! 6 &
-noremap! <script> 7 <SID>single_quote
-noremap! <script> 8 <SID>parenthese
-noremap! 9 )
+" noremap! <script> 7 <SID>single_quote
+" noremap! <script> 8 <SID>parenthese
+imap 7 <Plug>delimitMate'
+imap 8 <Plug>delimitMate(
+imap 9 <Plug>delimitMate)
+cnoremap 7 '
+cnoremap 8 (
+cnoremap 9 )
 noremap! ! 1
 noremap! " 2
 noremap! # 3
@@ -118,6 +125,7 @@ call dein#add('Shougo/neocomplete')
 call dein#add('Shougo/unite.vim')
 call dein#add('Shougo/vimproc.vim', {'build' : 'make'})
 call dein#add('tomasr/molokai')
+call dein#add('Raimondi/delimitMate')
 call dein#add('croaker/mustang-vim')
 call dein#add('airblade/vim-gitgutter')
 call dein#add('itchyny/vim-cursorword')
