@@ -32,8 +32,10 @@ set listchars=tab:>-,trail:_
 set autoindent
 set cindent
 
-"file分け
-au FileType python,java setlocal tabstop=4 shiftwidth=4 softtabstop=4
+" Change tabwidth by file type
+" kotlin is not included (not supported by default)
+au FileType python,java,scala,groovy
+  \ setlocal tabstop=4 shiftwidth=4 softtabstop=4
 
 "-------Search--------
 "インクリメンタルサーチを有効にする
