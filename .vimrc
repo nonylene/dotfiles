@@ -21,9 +21,9 @@ set showmatch
 "--------tab--------
 "tabをspaceにするなど
 set expandtab
-set tabstop=4
-set shiftwidth=4
-set softtabstop=4
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
 "tab空白表示
 set list
 set listchars=tab:>-,trail:_
@@ -33,13 +33,7 @@ set autoindent
 set cindent
 
 "file分け
-au BufNewFile,BufRead *.css set expandtab tabstop=2 shiftwidth=2 softtabstop=2
-au BufNewFile,BufRead *.php set expandtab tabstop=2 shiftwidth=2 softtabstop=2
-au BufNewFile,BufRead *.html set expandtab tabstop=2 shiftwidth=2 softtabstop=2
-au BufNewFile,BufRead *.md set expandtab tabstop=2 shiftwidth=2 softtabstop=2
-au BufNewFile,BufRead *.js set expandtab tabstop=2 shiftwidth=2 softtabstop=2
-au BufNewFile,BufRead *.yml set expandtab tabstop=2 shiftwidth=2 softtabstop=2
-au BufNewFile,BufRead *.rb set expandtab tabstop=2 shiftwidth=2 softtabstop=2
+au FileType python,java setlocal tabstop=4 shiftwidth=4 softtabstop=4
 
 "-------Search--------
 "インクリメンタルサーチを有効にする
