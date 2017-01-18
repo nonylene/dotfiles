@@ -65,6 +65,18 @@ set pastetoggle=<C-p>
 "補完設定
 set wildmode=longest,list,full
 
+" keymap
+" esc to c-f
+inoremap <C-f> <Esc>
+" remove highlights
+nnoremap <Esc> :noh<CR>
+
+" brackets
+inoremap { {}<Left>
+" inoremap <SID>Bracket {}<Left>
+inoremap <SID>Parenthese ()<Left>
+cnoremap <SID>Parenthese (
+
 "1とかの入れ替え
 noremap! 1 !
 noremap! 2 "
@@ -73,7 +85,7 @@ noremap! 4 $
 noremap! 5 %
 noremap! 6 &
 noremap! 7 '
-noremap! 8 (
+noremap! <script> 8 <SID>Parenthese
 noremap! 9 )
 noremap! ! 1
 noremap! " 2
