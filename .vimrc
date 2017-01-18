@@ -71,21 +71,25 @@ inoremap <C-f> <Esc>
 " remove highlights
 nnoremap <Esc> :noh<CR>
 
-" brackets
+" brackets and quotes
 inoremap { {}<Left>
-" inoremap <SID>Bracket {}<Left>
-inoremap <SID>Parenthese ()<Left>
-cnoremap <SID>Parenthese (
+inoremap [ []<Left>
+inoremap <SID>parenthese ()<Left>
+cnoremap <SID>parenthese (
+inoremap <SID>double_quote ""<Left>
+cnoremap <SID>double_quote "
+inoremap <SID>single_quote ''<Left>
+cnoremap <SID>single_quote '
 
 "1とかの入れ替え
 noremap! 1 !
-noremap! 2 "
+noremap! <script> 2 <SID>double_quote
 noremap! 3 #
 noremap! 4 $
 noremap! 5 %
 noremap! 6 &
-noremap! 7 '
-noremap! <script> 8 <SID>Parenthese
+noremap! <script> 7 <SID>single_quote
+noremap! <script> 8 <SID>parenthese
 noremap! 9 )
 noremap! ! 1
 noremap! " 2
@@ -131,13 +135,6 @@ noremap! <Esc>Ol +
 noremap! <Esc>OS -
 noremap! <Esc>OM <Enter>
 
-"カッコやクオートなどを入力した際に左に自動で移動
-"inoremap {} {}<Left>
-"inoremap [] []<Left>
-"inoremap () ()<Left>
-"inoremap "" ""<Left>
-"inoremap '' ''<Left>
-"inoremap <> <><Left>
 
 " dein
 let dein_base_dir = $HOME."/.vim/dein"
