@@ -29,8 +29,10 @@
     autocrlf = input
     excludesfile = ~/.gitignore
 [user]
-	email = cookie.speaker@gmail.com
-	name = nonylene
+  email = cookie.speaker@gmail.com
+  name = nonylene
+[url "git@github.com:"]
+  pushInsteadOf = https://github.com/
 [browse-remote "github.com"]
 	top = https://{host}/{path}
 	ref = https://{host}/{path}/tree/{short_ref}
