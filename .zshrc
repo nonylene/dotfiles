@@ -117,7 +117,7 @@ function +vi-no_vcs_hook() {
 precmd() {
   vcs_info
   prompt_left="${tput_cyan}${USER}@${HOST}${tput_normal}"
-  printf "\n%b%*b\n" "$prompt_left" "$((${COLUMNS}-${#prompt_left}+${prompt_color_len}))" "${vcs_info_msg_0_}"
+  printf "\n%s%*s\n" "$prompt_left" "$((${COLUMNS}-${#prompt_left}+${prompt_color_len}))" "${vcs_info_msg_0_}"
 }
 
 # prompt
