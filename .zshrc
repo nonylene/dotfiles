@@ -80,48 +80,65 @@ fi
 export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock
 ssh-add -l > /dev/null || ssh-add
 
-# vcs_info
-autoload -Uz vcs_info
-setopt prompt_subst
+() {
+  # vcs_info
+  autoload -Uz vcs_info
+  setopt prompt_subst
 
-local tput_normal=$(tput sgr0)
-local tput_yellow=$(tput setaf 3)
-local tput_red=$(tput setaf 1)
-local tput_cyan=$(tput setaf 6)
+  local tput_normal=$(tput sgr0)
+  local tput_yellow=$(tput setaf 3)
+  local tput_red=$(tput setaf 1)
+  local tput_cyan=$(tput setaf 6)
 
-zstyle ':vcs_info:*' enable git hg #svn bzr
-zstyle ':vcs_info:(git):*' formats "[${tput_yellow}%r: %b${tput_normal}]"
-zstyle ':vcs_info:(git):*' actionformats "[${tput_yellow}%r: %b${tput_normal} (${tput_red}%a${tput_normal})]"
-zstyle ':vcs_info:*' formats "[%s:${tput_yellow}%r: %b${tput_normal}]"
-zstyle ':vcs_info:*' actionformats "[%s:${tput_yellow}%r: %b${tput_normal} (${tput_red}%a${tput_normal})]"
-zstyle ':vcs_info:*+set-message:*' hooks vcs_info_hook
-zstyle ':vcs_info:*+no-vcs:*' hooks no_vcs_hook
+  zstyle ':vcs_info:*' enable git hg #svn bzr
+  zstyle ':vcs_info:(git):*' formats "[${tput_yellow}%r: %b${tput_normal}]"
+  zstyle ':vcs_info:(git):*' actionformats "[${tput_yellow}%r: %b${tput_normal} (${tput_red}%a${tput_normal})]"
+  zstyle ':vcs_info:*' formats "[%s:${tput_yellow}%r: %b${tput_normal}]"
+  zstyle ':vcs_info:*' actionformats "[%s:${tput_yellow}%r: %b${tput_normal} (${tput_red}%a${tput_normal})]"
+  zstyle ':vcs_info:*+set-message:*' hooks vcs_info_hook
+  zstyle ':vcs_info:*+no-vcs:*' hooks no_vcs_hook
 
-local noaction_color_len=$((${#tput_yellow} + ${#tput_cyan} + 2 * ${#tput_normal}))
-local action_color_len=$((${#tput_yellow} + ${#tput_cyan} + 2 * ${#tput_normal}))
-local novcs_color_len=$((${#tput_cyan} + ${#tput_normal}))
+  local prompt_color_len
+  local novcs_color_len=$((${#tput_cyan} + ${#tput_normal}))
+  local noaction_color_len=$((${novcs_color_len} + ${#tput_yellow} + ${#tput_normal}))
+  local action_color_len=$((${noaction_color_len} + ${#tput_red} + ${#tput_normal}))
 
-function +vi-vcs_info_hook() {
-  if [ -z ${hook_com[action]} ]; then
-    # no action
-    prompt_color_len=$noaction_color_len
-  else
-    prompt_color_len=$action_color_len
-  fi
+  function +vi-vcs_info_hook() {
+    if [ -z ${hook_com[action]} ]; then
+      # no action
+      prompt_color_len=$noaction_color_len
+    else
+      prompt_color_len=$action_color_len
+    fi
+  }
+
+  function +vi-no_vcs_hook() {
+    prompt_color_len=$novcs_color_len
+  }
+
+  local prompt_header
+
+  function generate_promopt_header() {
+    prompt_header=$(printf "\n%s%*s" "$prompt_left" \
+      "$((${COLUMNS}-${#prompt_left}+${prompt_color_len}-1))" \
+      "${vcs_info_msg_0_}")
+  }
+
+  precmd() {
+    vcs_info
+    prompt_left="${tput_cyan}${USER}@${HOST}${tput_normal}"
+    generate_promopt_header
+  }
+
+  TRAPWINCH() {
+    generate_promopt_header
+    zle reset-prompt
+  }
+
+  # prompt
+  PROMPT='${prompt_header}
+%~ %(!. !root! #.>) '
 }
-
-function +vi-no_vcs_hook() {
-  prompt_color_len=$novcs_color_len
-}
-
-precmd() {
-  vcs_info
-  prompt_left="${tput_cyan}${USER}@${HOST}${tput_normal}"
-  printf "\n%s%*s\n" "$prompt_left" "$((${COLUMNS}-${#prompt_left}+${prompt_color_len}))" "${vcs_info_msg_0_}"
-}
-
-# prompt
-PROMPT='%~ %(!. !root! #.>) '
 
 bindkey -e
 
