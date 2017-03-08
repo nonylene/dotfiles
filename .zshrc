@@ -64,6 +64,9 @@ export PATH="$HOME/local/bin:$PATH"
 export GOPATH="${HOME}/.go"
 export PATH="$GOPATH/bin:$PATH"
 
+# include path etc
+[ -f ~/.zshrc_local ] && source ~/.zshrc_local
+
 # ls color
 alias ls='ls --color=auto'
 eval `dircolors ~/.zsh/dircolors-solarized/dircolors.256dark`
@@ -180,6 +183,3 @@ fi
 
 # command color
 source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
-# include path etc
-[ -f ~/.zshrc_local ] && source ~/.zshrc_local
