@@ -1,0 +1,11 @@
+#! /bin/bash
+
+git diff --cached -S "(Dumper|binding\.pry)" --pickaxe-regex --exit-code
+if [[ $? != 0 ]]; then
+  echo -e "\033[31mDumper ka binding.pry aru yo!\033[0m" >&2
+  exec < /dev/tty
+  read -p "Force commit? [y/n]: " commit
+  exec <&-
+  [[ $commit != y* ]] && exit 1
+fi
+exit 0
