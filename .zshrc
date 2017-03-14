@@ -9,6 +9,10 @@ typeset -U PATH
 
 emulate sh -c 'source /etc/profile'
 
+if [ -z $(find /usr/share/terminfo -name 'screen-256color') ]; then
+    export TERM='xterm-256color'
+fi
+
 export EDITOR=vim
 # i : ignore case
 # M : long prompt
