@@ -109,40 +109,28 @@ noremap! ' 7
 noremap! ( 8
 noremap! ) 9
 
-" dein
-let dein_base_dir = $HOME."/.vim/dein"
-let dein_repo_dir = dein_base_dir."/repos/github.com/Shougo/dein.vim"
-
-" append dein_repo_dir
-" use exe to evaluate variable
-exe "set runtimepath+=".dein_repo_dir
-
-"filetype off called automatically
-call dein#begin(dein_base_dir)
-
-call dein#add(dein_base_dir)
-call dein#add('Shougo/unite.vim')
-call dein#add('tomasr/molokai')
-call dein#add('Raimondi/delimitMate')
-call dein#add('croaker/mustang-vim')
-call dein#add('airblade/vim-gitgutter')
-call dein#add('itchyny/vim-cursorword')
-call dein#add('itchyny/lightline.vim')
-call dein#add('tomtom/tcomment_vim')
-call dein#add('tpope/vim-fugitive')
+" plug
+call plug#begin('~/.vim/plugged')
+Plug 'Shougo/unite.vim'
+Plug 'tomasr/molokai'
+Plug 'Raimondi/delimitMate'
+Plug 'croaker/mustang-vim'
+Plug 'airblade/vim-gitgutter'
+Plug 'itchyny/vim-cursorword'
+Plug 'itchyny/lightline.vim'
+Plug 'tomtom/tcomment_vim'
+Plug 'tpope/vim-fugitive'
 if has('lua')
-  call dein#add('Shougo/neocomplete')
+  Plug 'Shougo/neocomplete'
 endif
+call plug#end()
 
-call dein#end()
-
-if dein#check_install()
-  call dein#install()
-endif
+autocmd VimEnter *
+  \  if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
+  \|   PlugInstall --sync | q
+  \| endif
 
 filetype plugin indent on
-
-unlet dein_repo_dir
 
 "neocomplete
 if has('lua')
