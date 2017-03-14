@@ -111,7 +111,6 @@ noremap! ) 9
 
 " plug
 call plug#begin('~/.vim/plugged')
-Plug 'Shougo/unite.vim'
 Plug 'tomasr/molokai'
 Plug 'Raimondi/delimitMate'
 Plug 'croaker/mustang-vim'
@@ -121,7 +120,10 @@ Plug 'itchyny/lightline.vim'
 Plug 'tomtom/tcomment_vim'
 Plug 'tpope/vim-fugitive'
 if has('lua')
+  " shoud be running on main machine
   Plug 'Shougo/neocomplete'
+  Plug 'Shougo/unite.vim'
+  Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 endif
 call plug#end()
 
@@ -138,6 +140,31 @@ if has('lua')
   let g:neocomplcache_enable_smart_case = 2
   let g:neocomplcache_min_syntax_length = 3
   inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+
+  " unite
+  let g:unite_enable_start_insert=1
+  let g:unite_source_history_yank_enable =1
+  " unite prefix
+  nmap <C-u> [unite]
+  nnoremap <silent> [unite]f :<C-u>call UniteFileRec()<CR>
+  nnoremap <silent> [unite]g :<C-u>call UniteGrep()<CR>
+  nnoremap <silent> [unite]b :<C-u>Unite<Space>buffer<CR>
+
+  function UniteFileRec()
+    if fugitive#extract_git_dir('.') !=# ''
+      Unite file_rec/git
+    else
+      Unite file_rec/async
+    endif
+  endfunction
+
+  function UniteGrep()
+    if fugitive#extract_git_dir('.') !=# ''
+      Unite grep/git
+    else
+      Unite grep
+    endif
+  endfunction
 endif
 
 "gitgutter
@@ -177,31 +204,6 @@ function! GitRelativePath()
     return '<'.rel_path[-max_len:]
   else
     return rel_path
-  endif
-endfunction
-
-" unite
-let g:unite_enable_start_insert=1
-let g:unite_source_history_yank_enable =1
-" unite prefix
-nmap <C-u> [unite]
-nnoremap <silent> [unite]f :<C-u>call UniteFileRec()<CR>
-nnoremap <silent> [unite]g :<C-u>call UniteGrep()<CR>
-nnoremap <silent> [unite]b :<C-u>Unite<Space>buffer<CR>
-
-function! UniteFileRec()
-  if fugitive#extract_git_dir('.') !=# ''
-    Unite file_rec/git
-  else
-    Unite file_rec
-  endif
-endfunction
-
-function! UniteGrep()
-  if fugitive#extract_git_dir('.') !=# ''
-    Unite grep/git
-  else
-    Unite grep
   endif
 endfunction
 
