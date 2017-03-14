@@ -1,4 +1,5 @@
 # Configuration file for ipython.
+c = get_config()
 
 ## Configure matplotlib for interactive use with the default matplotlib backend.
 #c.InteractiveShellApp.matplotlib = None
