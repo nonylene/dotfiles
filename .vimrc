@@ -116,9 +116,11 @@ Plug 'Raimondi/delimitMate'
 Plug 'croaker/mustang-vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'itchyny/vim-cursorword'
-Plug 'itchyny/lightline.vim'
 Plug 'tomtom/tcomment_vim'
 Plug 'tpope/vim-fugitive'
+if v:version > 702
+  Plug 'itchyny/lightline.vim'
+endif
 if has('lua')
   " shoud be running on main machine
   Plug 'Shougo/neocomplete'
