@@ -1,3 +1,6 @@
+if [ -f /etc/bashrc  ]; then . /etc/bashrc  fi
+if [ -f /etc/profile ]; then . /etc/profile fi
+
 # history
 export HISTSIZE=3000
 export HISTFILESIZE=10000
