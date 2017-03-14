@@ -121,9 +121,7 @@ exe "set runtimepath+=".dein_repo_dir
 call dein#begin(dein_base_dir)
 
 call dein#add(dein_base_dir)
-call dein#add('Shougo/neocomplete')
 call dein#add('Shougo/unite.vim')
-call dein#add('Shougo/vimproc.vim', {'build' : 'make'})
 call dein#add('tomasr/molokai')
 call dein#add('Raimondi/delimitMate')
 call dein#add('croaker/mustang-vim')
@@ -132,6 +130,9 @@ call dein#add('itchyny/vim-cursorword')
 call dein#add('itchyny/lightline.vim')
 call dein#add('tomtom/tcomment_vim')
 call dein#add('tpope/vim-fugitive')
+if has('lua')
+  call dein#add('Shougo/neocomplete')
+endif
 
 call dein#end()
 
@@ -144,10 +145,12 @@ filetype plugin indent on
 unlet dein_repo_dir
 
 "neocomplete
-let g:neocomplete#enable_at_startup = 1
-let g:neocomplcache_enable_smart_case = 2
-let g:neocomplcache_min_syntax_length = 3
-inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+if has('lua')
+  let g:neocomplete#enable_at_startup = 1
+  let g:neocomplcache_enable_smart_case = 2
+  let g:neocomplcache_min_syntax_length = 3
+  inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+endif
 
 "gitgutter
 let g:gitgutter_realtime = 1
@@ -202,7 +205,7 @@ function! UniteFileRec()
   if fugitive#extract_git_dir('.') !=# ''
     Unite file_rec/git
   else
-    Unite file_rec/async
+    Unite file_rec
   endif
 endfunction
 
