@@ -9,9 +9,14 @@ typeset -U PATH
 
 emulate sh -c 'source /etc/profile'
 
-if [ -z $(find /usr/share/terminfo -name 'screen-256color') ]; then
+terminfo_dirs=("/usr/share/terminfo" "/lib/terminfo" "/etc/terminfo")
+
+for d in $terminfo_dirs; do
+  if [[ -d $d && -z $(find $d -name 'screen-256color') ]]; then
     export TERM='xterm-256color'
-fi
+  fi
+done
+
 
 export EDITOR=vim
 # i : ignore case
