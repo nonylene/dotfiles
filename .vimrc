@@ -60,11 +60,10 @@ set hlsearch
 "検索やコマンドの履歴
 set history=50
 
-"pastemode
-set pastetoggle=<C-p>
-
 "補完設定
 set wildmode=longest,list,full
+
+set pastetoggle=<C-k>
 
 " keymap
 " esc to c-f
@@ -72,42 +71,14 @@ inoremap <C-f> <Esc>
 " remove highlights
 nnoremap <Esc><Esc> <C-u>:noh<CR>
 
-" brackets and quotes
-" inoremap { {}<Left>
-" inoremap [ []<Left>
-" inoremap <SID>parenthese ()<Esc>i
-" cnoremap <SID>parenthese (
-" inoremap <SID>double_quote ""<Left>
-" cnoremap <SID>double_quote "
-" inoremap <SID>single_quote ''<Left>
-" cnoremap <SID>single_quote '
 
-"1とかの入れ替え
-noremap! 1 !
-" noremap! <script> 2 <SID>double_quote
-imap 2 <Plug>delimitMate"
-cnoremap 2 "
-noremap! 3 #
-noremap! 4 $
-noremap! 5 %
-noremap! 6 &
-" noremap! <script> 7 <SID>single_quote
-" noremap! <script> 8 <SID>parenthese
-imap 7 <Plug>delimitMate'
-imap 8 <Plug>delimitMate(
-imap 9 <Plug>delimitMate)
-cnoremap 7 '
-cnoremap 8 (
-cnoremap 9 )
-noremap! ! 1
-noremap! " 2
-noremap! # 3
-noremap! $ 4
-noremap! % 5
-noremap! & 6
-noremap! ' 7
-noremap! ( 8
-noremap! ) 9
+augroup local
+  au!
+  au OptionSet paste call lightline#update()
+augroup END
+
+map <C-k> <Plug>KeyMapRotate
+map! <C-k> <Plug>KeyMapRotate
 
 " plug
 call plug#begin('~/.vim/plugged')
@@ -118,6 +89,8 @@ Plug 'airblade/vim-gitgutter'
 Plug 'itchyny/vim-cursorword'
 Plug 'tomtom/tcomment_vim'
 Plug 'tpope/vim-fugitive'
+" Plug '~/codes/vim-keymaps'
+Plug 'nonylene/vim-keymaps'
 if v:version > 702
   Plug 'itchyny/lightline.vim'
 endif
@@ -148,11 +121,11 @@ if has('lua')
   let g:unite_source_history_yank_enable =1
   " unite prefix
   nmap <C-u> [unite]
-  nnoremap <silent> [unite]f :<C-u>call UniteFileRec()<CR>
-  nnoremap <silent> [unite]g :<C-u>call UniteGrep()<CR>
+  nnoremap <silent> [unite]f :<C-u>call <SID>UniteFileRec()<CR>
+  nnoremap <silent> [unite]g :<C-u>call <SID>UniteGrep()<CR>
   nnoremap <silent> [unite]b :<C-u>Unite<Space>buffer<CR>
 
-  function UniteFileRec()
+  function! s:UniteFileRec()
     if fugitive#extract_git_dir('.') !=# ''
       Unite file_rec/git
     else
@@ -160,7 +133,7 @@ if has('lua')
     endif
   endfunction
 
-  function UniteGrep()
+  function! s:UniteGrep()
     if fugitive#extract_git_dir('.') !=# ''
       Unite grep/git
     else
@@ -174,7 +147,96 @@ let g:gitgutter_realtime = 1
 let g:gitgutter_eager = 1
 let g:gitgutter_sign_column_always = 1
 
-" lightline
+" brackets and quotes
+" inoremap { {}<Left>
+" inoremap [ []<Left>
+" inoremap <SID>parenthese ()<Esc>i
+" cnoremap <SID>parenthese (
+" inoremap <SID>double_quote ""<Left>
+" cnoremap <SID>double_quote "
+" inoremap <SID>single_quote ''<Left>
+" cnoremap <SID>single_quote '
+
+" keymaps
+let g:keymaps =  [
+      \  {
+      \    'name': 'JP',
+      \    'keymap': {
+      \      'noremap!': {
+      \        '1': '!',
+      \        '3': '#',
+      \        '4': '$',
+      \        '5': '%',
+      \        '6': '&',
+      \        '!': '1',
+      \        '"': '2',
+      \        '#': '3',
+      \        '$': '4',
+      \        '%': '5',
+      \        '&': '6',
+      \        "'": '7',
+      \        '(': '8',
+      \        ')': '9',
+      \      },
+      \      'imap': {
+      \        '2': '<Plug>delimitMate"',
+      \        '7': "<Plug>delimitMate'",
+      \        '8': '<Plug>delimitMate(',
+      \        '9': '<Plug>delimitMate)',
+      \      },
+      \      'cnoremap': {
+      \        '2': '"',
+      \        '7': "'",
+      \        '8': '(',
+      \        '9': ')',
+      \      },
+      \    },
+      \  },
+      \  {
+      \    'name': 'US',
+      \    'keymap': {
+      \      'noremap!': {
+      \        '1': '!',
+      \        '2': '@',
+      \        '3': '#',
+      \        '4': '$',
+      \        '5': '%',
+      \        '6': '^',
+      \        '7': '&',
+      \        '8': '*',
+      \        '!': '1',
+      \        '@': '2',
+      \        '#': '3',
+      \        '$': '4',
+      \        '%': '5',
+      \        '^': '6',
+      \        '&': '7',
+      \        '*': '8',
+      \
+      \        ':': ';',
+      \        ';': ':',
+      \      },
+      \      'noremap' : {
+      \        ':': ';',
+      \        ';': ':',
+      \      },
+      \      'imap': {
+      \        '9': '<Plug>delimitMate(',
+      \        '0': '<Plug>delimitMate)',
+      \      },
+      \      'cnoremap': {
+      \        '9': '(',
+      \        '0': ')',
+      \      },
+      \    },
+      \  },
+      \  {
+      \    'name': 'PASTE',
+      \    'paste': 1
+      \  },
+      \]
+
+ " lightline
 let g:lightline = {
       \ 'component': {
       \   'readonly': '%{&readonly?"ro":""}',
@@ -182,9 +244,10 @@ let g:lightline = {
       \ },
       \ 'component_function': {
       \   'git_path': 'GitRelativePath',
+      \   'keymap': 'keymaps#get_current_keymap_name',
       \ },
       \ 'active': {
-      \   'left': [ [ 'mode', 'paste' ], [ 'git_path' ], [] ],
+      \   'left': [ [ 'mode', 'keymap' ], [ 'git_path' ], [] ],
       \   'right': [ [], [], [ 'fileformat', 'fileencoding', 'filetype', 'total_lines' ] ],
       \ },
       \ 'inactive': {
