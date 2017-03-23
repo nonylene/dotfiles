@@ -239,7 +239,6 @@ let g:keymaps =  [
  " lightline
 let g:lightline = {
       \ 'component': {
-      \   'readonly': '%{&readonly?"ro":""}',
       \   'total_lines': '%L',
       \ },
       \ 'component_function': {
@@ -257,6 +256,8 @@ let g:lightline = {
       \}
 
 function! GitRelativePath()
+  let head = &modified ? '* ' : (&modifiable && !&readonly)? '' : '- '
+
   try
     let git_work_tree = fugitive#repo().tree()
     let rel_path = substitute(expand('%:p'), l:git_work_tree.'/', "G:", "")
@@ -264,11 +265,12 @@ function! GitRelativePath()
     let rel_path = expand('%:~')
   endtry
 
-  let max_len = winwidth(0) - 40
+
+  let max_len = winwidth(0) - 45 - strlen(head)
   if strlen(rel_path) > max_len
-    return '<'.rel_path[-max_len:]
+    return head.'<'.rel_path[-max_len:]
   else
-    return rel_path
+    return head.rel_path
   endif
 endfunction
 
