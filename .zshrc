@@ -42,11 +42,12 @@ setopt PRINT_EXIT_VALUE
 
 # history
 export HISTFILE=${HOME}/.zsh_hist
-export HISTSIZE=3000
-export SAVEHIST=10000
+export HISTSIZE=4000
+export SAVEHIST=100000
 setopt hist_ignore_dups
 setopt inc_append_history
 setopt EXTENDED_HISTORY
+setopt hist_reduce_blanks
 
 # long command
 export REPORTTIME=1
@@ -149,8 +150,19 @@ PROMPT='${prompt_header}
 
 bindkey -e
 
-# completion commands
+# completion
 autoload -U compinit; compinit
+
+# do not expand glob directly
+setopt glob_complete
+
+zstyle ':completion:*:default' menu select=1
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
+zstyle ':completion:*:processes' menu yes select=1
+zstyle ':completion:*' use-cache true
+
+# use []^ etc.
+setopt no_nomatch
 
 # cd if command not found
 setopt auto_cd
@@ -163,10 +175,6 @@ setopt hist_ignore_all_dups
 
 # start with space, not save in history
 setopt hist_ignore_space
-
-# completion files
-zstyle ':completion:*:default' menu select=1
-zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 
 # ctrl-w -> delete until '/'
 # treat these words as normal chalacters
@@ -188,3 +196,7 @@ fi
 
 # command color
 source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# use per directory history!
+export PER_DIRECTORY_HISTORY_TOGGLE='^H'
+source ~/.zsh/per-directory-history/per-directory-history.zsh
