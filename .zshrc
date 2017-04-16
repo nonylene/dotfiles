@@ -186,12 +186,11 @@ fi
 
 # tmux
 if [ -z $TMUX ]; then
-    if $(tmux has-session); then
-       tmux new-window
-       tmux attach
-    else
-       tmux
-    fi
+  if $(tmux has-session); then
+    tmux new-session
+  else
+    tmux
+  fi
 fi
 
 # command color
