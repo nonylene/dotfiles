@@ -72,10 +72,12 @@ inoremap <C-f> <Esc>
 nnoremap <Esc><Esc> <C-u>:noh<CR>
 
 
-augroup local
-  au!
-  au OptionSet paste call lightline#update()
-augroup END
+if has('patch-7.4-786')
+  augroup local
+    au!
+    au OptionSet paste call lightline#update()
+  augroup END
+endif
 
 map <C-k> <Plug>KeyMapRotate
 map! <C-k> <Plug>KeyMapRotate
