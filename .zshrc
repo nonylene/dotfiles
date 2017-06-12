@@ -29,6 +29,7 @@ export PAGER=less
 alias 'v'='vim'
 alias 'vi'='vim'
 alias py='python3'
+alias ipy='ipython3'
 alias ll='ls -lh'
 alias la='ls -a'
 alias lla='ll -a'
