@@ -1,0 +1,28 @@
+// Place your settings in this file to overwrite the default settings
+{
+    "vim.disableAnnoyingNeovimMessage": true,
+    "editor.fontSize": 15,
+    "editor.tabSize": 2,
+    "editor.renderWhitespace": "boundary",
+    "editor.wordWrap": "on",
+    "editor.minimap.enabled": false,
+    "editor.suggestLineHeight": 28,
+    "editor.cursorBlinking": "solid",
+    "window.openFoldersInNewWindow": "default",
+    "files.hotExit": "off",
+    "search.useIgnoreFilesByDefault": true,
+    "search.quickOpen.includeSymbols": true,
+    "terminal.external.osxExec": "iTerm.app",
+    "terminal.integrated.fontSize": 15,
+    "terminal.integrated.scrollback": 5000,
+    "telemetry.enableCrashReporter": false,
+    "telemetry.enableTelemetry": false,
+    "git.autofetch": false,
+    "vim.overrideCopy": false,
+    "vim.statusBarColorControl": false,
+    "workbench.colorTheme": "Dark (Molokai)",
+    "window.zoomLevel": 0,
+    "vim.hlsearch": true,
+    "python.pythonPath": "python3",
+    "python.linting.flake8Enabled": true
+}
