@@ -289,7 +289,6 @@ elseif &term =~ "xterm-color"
     set t_Sf=[3%dm
     set t_Sb=[4%dm
 endif
-let g:molokai_original = 1
 let g:rehash256 = 1
 
 syntax enable
