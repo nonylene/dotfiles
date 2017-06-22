@@ -12,6 +12,7 @@
     "files.hotExit": "off",
     "search.useIgnoreFilesByDefault": true,
     "search.quickOpen.includeSymbols": true,
+    "terminal.external.osxExec": "iTerm.app",
     "terminal.integrated.fontSize": 15,
     "terminal.integrated.scrollback": 5000,
     "telemetry.enableCrashReporter": false,
