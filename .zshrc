@@ -186,7 +186,18 @@ if [ -n "$LS_COLORS" ]; then
 fi
 
 # tmux
-if [ -z $TMUX ]; then
+# without mac!
+case "$OSTYPE" in
+  darwin*)
+    # do not launch tmux without iTerm2
+    [ "$TERM_PROGRAM" = 'iTerm.app' ] && launch_tmux=true
+    ;;
+  *)
+    launch_tmux=true
+    ;;
+esac
+
+if [[ $launch_tmux == true && -z $TMUX ]]; then
   if $(tmux has-session); then
     tmux new-session
   else
