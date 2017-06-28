@@ -62,11 +62,15 @@ export LC_ALL=en_US.UTF-8
 alias grep='grep --color=auto'
 
 function gr {
-    grep -rI --exclude-dir={.git,vendor} "$@" ./
+  grep -rI --exclude-dir={.git,vendor} "$@" ./
 }
 
 function fin {
-    find ./  -name "*$@*" | grep "$@"
+  find ./  -name "*$@*" | grep "$@"
+}
+
+function dotfiles {
+  (cd ~/dotfiles; git pull origin master; ./deploy.sh); . ~/.zshrc
 }
 
 export PATH="$HOME/local/bin:$PATH"
