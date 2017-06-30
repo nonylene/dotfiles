@@ -20,9 +20,20 @@
     "git.autofetch": false,
     "vim.overrideCopy": false,
     "vim.statusBarColorControl": false,
-    "workbench.colorTheme": "Dark (Molokai)",
     "window.zoomLevel": 0,
     "vim.hlsearch": true,
     "python.pythonPath": "python3",
-    "python.linting.flake8Enabled": true
+    "python.linting.flake8Enabled": true,
+    "workbench.colorTheme": "Dark (Molokai)",
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        "**/bundle": true
+    },
+    "window.title": "${activeEditorMedium}${separator}${rootName}",
+    "files.insertFinalNewline": true,
+    "python.linting.pylintEnabled": false
 }
