@@ -24,5 +24,15 @@
     "window.zoomLevel": 0,
     "vim.hlsearch": true,
     "python.pythonPath": "python3",
-    "python.linting.flake8Enabled": true
+    "python.linting.flake8Enabled": true,
+    "vim.insertModeKeyBindingsNonRecursive": [
+        {
+            "before": [
+                "<C-f>"
+            ],
+            "after": [
+                "<Esc>"
+            ]
+        }
+    ]
 }
