@@ -33,7 +33,7 @@
                 "<Esc>"
             ]
         }
-    ]
+    ],
     "workbench.colorTheme": "Dark (Molokai)",
     "files.exclude": {
         "**/.git": true,
