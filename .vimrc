@@ -147,7 +147,8 @@ endif
 "gitgutter
 let g:gitgutter_realtime = 1
 let g:gitgutter_eager = 1
-let g:gitgutter_sign_column_always = 1
+
+set signcolumn=yes
 
 " brackets and quotes
 " inoremap { {}<Left>
