@@ -45,5 +45,9 @@
     },
     "window.title": "${activeEditorMedium}${separator}${rootName}",
     "files.insertFinalNewline": true,
-    "python.linting.pylintEnabled": false
+    "python.linting.pylintEnabled": false,
+    "go.inferGopath": false,
+    "workbench.startupEditor": "newUntitledFile",
+    "go.formatTool": "gofmt",
+    "extensions.ignoreRecommendations": false
 }
