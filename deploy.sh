@@ -6,7 +6,8 @@ cd `dirname $0`
 # .. and . is not included with "*"
 shopt -s dotglob
 
-function link_file_or_reccur() {
+# link file or dig new dir
+function link_file_or_recur() {
     for f in $1/*; do
         if [[ $f != *.swp ]]; then
             if [[ -f $f && ! -f ~/$f ]]; then
@@ -14,7 +15,7 @@ function link_file_or_reccur() {
             fi
             if [ -d $f ]; then
               if [ ! -d ~/$f ]; then mkdir ~/$f; fi
-              link_file_or_reccur $f
+              link_file_or_recur $f
             fi
         fi
     done
@@ -28,7 +29,7 @@ for f in .[!.]*; do
         fi
         if [ -d $f ]; then
           if [ ! -d ~/$f ]; then mkdir ~/$f; fi
-          link_file_or_reccur $f
+          link_file_or_recur $f
         fi
     fi
 done
@@ -45,15 +46,6 @@ if [[ `uname` == 'Darwin' ]]; then
   done
 fi
 
-# zsh migration
-if [ ! -f ~/.zshrc_local ];then
-  echo -e "# vim: filetype=zsh\n" > ~/.zshrc_local
-  if [ -f ~/.zshrc_server ]; then
-    cat ~/.zshrc_server >> ~/.zshrc_local
-    echo "please remove ~/.zshrc_server"
-  fi
-fi
-
 # local configs
 function touch_unless_exists() {
   if [ ! -f ~/$1 ];then
@@ -61,7 +53,13 @@ function touch_unless_exists() {
   fi
 }
 
-touch_unless_exists '.zshrc_local'
+function cp_local_unless_exists() {
+  if [ ! -f ~/$1 ];then
+    cp locals/$1 ~/$1
+  fi
+}
+
+cp_local_unless_exists '.zshrc_local'
 touch_unless_exists '.bashrc_local'
 touch_unless_exists '.tmux-server.conf'
 
