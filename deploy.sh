@@ -35,9 +35,16 @@ for f in .[!.]*; do
 done
 
 # vscode
-if [[ `uname` == 'Darwin' ]]; then
-  VSCODE_DIR="$HOME/Library/Application Support/Code/User"
+case `uname` in
+  'Darwin')
+    VSCODE_DIR="$HOME/Library/Application Support/Code/User"
+    ;;
+  'Linux')
+    VSCODE_DIR="$HOME/.config/Code/User"
+    ;;
+esac
 
+if [[ -n $VSCODE_DIR ]]; then
   for f in 'keybindings.json' 'settings.json'; do
     file="$VSCODE_DIR/$f"
     if [[ ! -L "$file" ]]; then
