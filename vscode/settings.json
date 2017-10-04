@@ -34,6 +34,30 @@
             ]
         }
     ],
+    "vim.otherModesKeyBindings": [
+        {
+            "before": [
+                "u"
+            ],
+            "after": [],
+            "commands": [
+                {
+                    "command": "undo"
+                }
+            ]
+        },
+        {
+            "before": [
+                "<C-r>"
+            ],
+            "after": [],
+            "commands": [
+                {
+                    "command": "redo"
+                }
+            ]
+        }
+    ],
     "workbench.colorTheme": "Dark (Molokai)",
     "files.exclude": {
         "**/.git": true,
