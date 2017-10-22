@@ -34,7 +34,7 @@
             ]
         }
     ],
-    "vim.otherModesKeyBindingsNonRecursive": [
+    "vim.otherModesKeyBindings": [
         {
             "before": [
                 "u"
@@ -72,5 +72,9 @@
     "python.linting.pylintEnabled": false,
     "[python]": {
         "editor.tabSize": 4 
-    }
+    },
+    "go.inferGopath": false,
+    "workbench.startupEditor": "newUntitledFile",
+    "go.formatTool": "gofmt",
+    "extensions.ignoreRecommendations": false
 }
