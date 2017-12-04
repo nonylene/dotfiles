@@ -34,6 +34,30 @@
             ]
         }
     ],
+    "vim.otherModesKeyBindings": [
+        {
+            "before": [
+                "u"
+            ],
+            "after": [],
+            "commands": [
+                {
+                    "command": "undo"
+                }
+            ]
+        },
+        {
+            "before": [
+                "<C-r>"
+            ],
+            "after": [],
+            "commands": [
+                {
+                    "command": "redo"
+                }
+            ]
+        }
+    ],
     "workbench.colorTheme": "Dark (Molokai)",
     "files.exclude": {
         "**/.git": true,
@@ -46,6 +70,9 @@
     "window.title": "${activeEditorMedium}${separator}${rootName}",
     "files.insertFinalNewline": true,
     "python.linting.pylintEnabled": false,
+    "[python]": {
+        "editor.tabSize": 4 
+    },
     "go.inferGopath": false,
     "workbench.startupEditor": "newUntitledFile",
     "go.formatTool": "gofmt",
