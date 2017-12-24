@@ -76,7 +76,7 @@ function dotfiles {
 export PATH="$HOME/local/bin:$PATH"
 
 # gopath
-export GOPATH="${HOME}/.go"
+export GOPATH="${HOME}/go"
 export PATH="$GOPATH/bin:$PATH"
 
 # include path etc
