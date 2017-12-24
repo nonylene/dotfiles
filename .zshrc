@@ -41,6 +41,8 @@ alias ta='tmux attach'
 
 setopt PRINT_EXIT_VALUE
 
+export PIPENV_VENV_IN_PROJECT=1
+
 # history
 export HISTFILE=${HOME}/.zsh_hist
 export HISTSIZE=4000
