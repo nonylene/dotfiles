@@ -73,7 +73,8 @@
     },
     "go.inferGopath": false,
     "workbench.startupEditor": "newUntitledFile",
-    "go.formatTool": "gofmt",
     "extensions.ignoreRecommendations": false,
-    "editor.formatOnSave": true
+    "editor.formatOnSave": true,
+    "workbench.editor.enablePreviewFromQuickOpen": false,
+    "workbench.editor.enablePreview": false
 }
