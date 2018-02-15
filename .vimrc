@@ -15,6 +15,9 @@ set completeopt=menuone
 "選択行を強調する
 set cursorline
 
+" 上下3行
+set scrolloff=3
+
 " always show status bar
 set laststatus=2
 " remove vim mode information
