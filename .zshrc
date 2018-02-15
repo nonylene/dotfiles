@@ -17,6 +17,8 @@ for d in $terminfo_dirs; do
   fi
 done
 
+autoload -Uz zmv
+alias mmv='noglob zmv -W'
 
 export EDITOR=vim
 # i : ignore case
