@@ -78,5 +78,6 @@
     "extensions.ignoreRecommendations": false,
     "editor.formatOnSave": true,
     "workbench.editor.enablePreviewFromQuickOpen": false,
-    "workbench.editor.enablePreview": false
+    "workbench.editor.enablePreview": false,
+    "search.location": "panel"
 }
