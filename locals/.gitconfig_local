@@ -1,1 +1,5 @@
 # vim: filetype=gitconfig
+#
+# [includeIf "gitdir:~/codes/"]
+#   path = ~/codes/.gitconfig
+#
