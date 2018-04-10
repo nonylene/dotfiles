@@ -1,5 +1,5 @@
 [include]
-    path = ~/.gituser
+    path = ~/.gitconfig_local
 [filter "media"]
     clean = git-media-clean %f
     smudge = git-media-smudge %f
@@ -8,6 +8,7 @@
 [alias]
     co = checkout
     cob = checkout -b
+    br = browse-remote
     bra = branch
     cm = commit -m
     ca = commit --amend
