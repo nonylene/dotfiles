@@ -58,9 +58,9 @@ setopt hist_reduce_blanks
 export REPORTTIME=1
 
 # ENGLISH
-export LANG=C.UTF-8
-export LC_CTYPE=C.UTF-8
-export LC_ALL=C.UTF-8
+export LANG=C
+export LC_CTYPE=C
+export LC_ALL=C
 
 # grep color
 alias grep='grep --color=auto'
