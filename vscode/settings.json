@@ -4,6 +4,7 @@
     "editor.tabSize": 2,
     "editor.renderControlCharacters": true,
     "editor.renderWhitespace": "boundary",
+    "workbench.tree.horizontalScrolling": true,
     "editor.wordWrap": "on",
     "editor.minimap.enabled": false,
     "editor.suggestLineHeight": 28,
