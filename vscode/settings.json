@@ -2,6 +2,7 @@
 {
     "editor.fontSize": 15,
     "editor.tabSize": 2,
+    "editor.renderControlCharacters": true,
     "editor.renderWhitespace": "boundary",
     "editor.wordWrap": "on",
     "editor.minimap.enabled": false,
