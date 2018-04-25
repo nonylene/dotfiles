@@ -70,6 +70,7 @@
     "search.smartCase": true,
     "files.insertFinalNewline": true,
     "python.linting.pylintEnabled": false,
+    // override on project settings if pipenv
     "python.pythonPath": "python3",
     "[python]": {
         "editor.tabSize": 4
