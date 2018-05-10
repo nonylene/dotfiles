@@ -99,12 +99,6 @@ Plug 'nonylene/vim-keymaps'
 if v:version > 702
   Plug 'itchyny/lightline.vim'
 endif
-if has('lua')
-  " shoud be running on main machine
-  Plug 'Shougo/neocomplete'
-  Plug 'Shougo/unite.vim'
-  Plug 'Shougo/vimproc.vim', {'do' : 'make'}
-endif
 call plug#end()
 
 autocmd VimEnter *
@@ -113,39 +107,6 @@ autocmd VimEnter *
   \| endif
 
 filetype plugin indent on
-
-"neocomplete
-if has('lua')
-  let g:neocomplete#enable_at_startup = 1
-  let g:neocomplcache_enable_smart_case = 2
-  let g:neocomplcache_min_syntax_length = 3
-  inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
-
-  " unite
-  let g:unite_enable_start_insert=1
-  let g:unite_source_history_yank_enable =1
-  " unite prefix
-  nmap <C-u> [unite]
-  nnoremap <silent> [unite]f :<C-u>call <SID>UniteFileRec()<CR>
-  nnoremap <silent> [unite]g :<C-u>call <SID>UniteGrep()<CR>
-  nnoremap <silent> [unite]b :<C-u>Unite<Space>buffer<CR>
-
-  function! s:UniteFileRec()
-    if fugitive#extract_git_dir('.') !=# ''
-      Unite file_rec/git
-    else
-      Unite file_rec/async
-    endif
-  endfunction
-
-  function! s:UniteGrep()
-    if fugitive#extract_git_dir('.') !=# ''
-      Unite grep/git
-    else
-      Unite grep
-    endif
-  endfunction
-endif
 
 "gitgutter
 let g:gitgutter_realtime = 1
@@ -156,16 +117,6 @@ if exists('&signcolumn')  " Vim 7.4.2201
 else
   let g:gitgutter_sign_column_always = 1
 endif
-
-" brackets and quotes
-" inoremap { {}<Left>
-" inoremap [ []<Left>
-" inoremap <SID>parenthese ()<Esc>i
-" cnoremap <SID>parenthese (
-" inoremap <SID>double_quote ""<Left>
-" cnoremap <SID>double_quote "
-" inoremap <SID>single_quote ''<Left>
-" cnoremap <SID>single_quote '
 
 " keymaps
 let g:keymaps =  [
