@@ -99,7 +99,18 @@ Plug 'nonylene/vim-keymaps'
 if v:version > 702
   Plug 'itchyny/lightline.vim'
 endif
+if has('lua')
+  " shoud be running on main machine
+  Plug 'Shougo/neocomplete'
+endif
 call plug#end()
+
+
+" neocomplete
+let g:neocomplete#enable_at_startup = 1
+let g:neocomplcache_enable_smart_case = 2
+let g:neocomplcache_min_syntax_length = 3
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 
 autocmd VimEnter *
   \  if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
