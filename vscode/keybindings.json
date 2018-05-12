@@ -15,5 +15,9 @@
   {
     "key": "cmd+n",
     "command": "explorer.newFile"
+  },
+  {
+    "key": "cmd+b",
+    "command": "editor.action.goToDeclaration"
   }
 ]

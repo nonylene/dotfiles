@@ -1,5 +1,3 @@
-[include]
-    path = ~/.gituser
 [filter "media"]
     clean = git-media-clean %f
     smudge = git-media-smudge %f
@@ -8,6 +6,7 @@
 [alias]
     co = checkout
     cob = checkout -b
+    br = browse-remote
     bra = branch
     cm = commit -m
     ca = commit --amend
@@ -45,3 +44,6 @@
 	rev = https://{host}/{path}/commit/{commit}
 	pr = https://{host}/{path}/pull/{short_ref}
 	file = "https://{host}/{path}/{file.directory? and :tree or :blob}/{short_rev}/{file}{lines && \"#L%s\" % lines.join(\"-\")}"
+
+[include]
+    path = ~/.gitconfig_local

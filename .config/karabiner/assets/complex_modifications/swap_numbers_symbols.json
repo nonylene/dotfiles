@@ -2,7 +2,7 @@
   "title": "Exchange numbers and symbols - vscode, xcode, android studio",
   "rules": [
     {
-      "description": "Exchange numbers and symbols (1234567890 and !@#$%^&*())",
+      "description": "Exchange numbers and symbols (1234567890 and !@#$%^&*() or !\"#$%&'()0)",
       "manipulators": [
         {
           "type": "basic",

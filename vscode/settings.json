@@ -2,7 +2,9 @@
 {
     "editor.fontSize": 15,
     "editor.tabSize": 2,
+    "editor.renderControlCharacters": true,
     "editor.renderWhitespace": "boundary",
+    "workbench.tree.horizontalScrolling": true,
     "editor.wordWrap": "on",
     "editor.minimap.enabled": false,
     "editor.suggestLineHeight": 28,
@@ -68,6 +70,7 @@
     "search.smartCase": true,
     "files.insertFinalNewline": true,
     "python.linting.pylintEnabled": false,
+    // override on project settings if pipenv
     "python.pythonPath": "python3",
     "[python]": {
         "editor.tabSize": 4
@@ -78,5 +81,6 @@
     "extensions.ignoreRecommendations": false,
     "editor.formatOnSave": true,
     "workbench.editor.enablePreviewFromQuickOpen": false,
-    "workbench.editor.enablePreview": false
+    "workbench.editor.enablePreview": false,
+    "search.location": "panel"
 }
