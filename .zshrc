@@ -215,3 +215,13 @@ source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # use per directory history!
 export PER_DIRECTORY_HISTORY_TOGGLE='^H'
 source ~/.zsh/per-directory-history/per-directory-history.zsh
+
+# ghq
+function ghq () {
+    if [ "$1" = look -a -n "$2" ]; then
+        cd $(command ghq list -p $2)
+        return
+    fi
+
+    command ghq "$@"
+}
