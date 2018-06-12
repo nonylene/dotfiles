@@ -180,7 +180,7 @@ setopt hist_ignore_space
 
 # ctrl-w -> delete until '/'
 # treat these words as normal chalacters
-WORDCHARS='*?_-.[]~=&;!#$%^(){}<>|'
+WORDCHARS='*?_-[]~&;!#$%^(){}<>'
 
 if [ -n "$LS_COLORS" ]; then
   zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
