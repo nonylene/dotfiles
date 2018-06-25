@@ -82,5 +82,42 @@
     "editor.formatOnSave": true,
     "workbench.editor.enablePreviewFromQuickOpen": false,
     "workbench.editor.enablePreview": false,
-    "search.location": "panel"
+    "search.location": "panel",
+    "latex-workshop.latex.tools": [
+        {
+            "name": "uplatex",
+            "command": "uplatex",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "%DOC%.tex"
+            ]
+        },
+        {
+            "name": "dvipdfmx",
+            "command": "dvipdfmx",
+            "args": [
+                "%DOC%.dvi"
+            ]
+        }
+    ],
+    "latex-workshop.latex.recipes": [
+        {
+            "name": "uplatex -> dvipdfmx",
+            "tools": [
+                "uplatex",
+                "dvipdfmx",
+            ]
+        },
+        {
+            "name": "uplatex*2 -> dvipdfmx",
+            "tools": [
+                "uplatex",
+                "uplatex",
+                "dvipdfmx",
+            ]
+        }
+    ],
+    "latex-workshop.latex.autoBuild.onSave.enabled": false
 }
