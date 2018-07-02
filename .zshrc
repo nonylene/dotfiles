@@ -225,3 +225,11 @@ function ghq () {
 
     command ghq "$@"
 }
+
+# mv with directory_history
+function gmv {
+  path1=`realpath $1`
+  path2=`realpath $2`
+  mv $path1 $path2
+  mv $HOME/.directory_history/$path1 $HOME/.directory_history/$path2
+}

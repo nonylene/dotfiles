@@ -57,7 +57,6 @@
             ]
         }
     ],
-    "workbench.colorTheme": "Dark (Molokai)",
     "files.exclude": {
         "**/.git": true,
         "**/.svn": true,
@@ -119,5 +118,6 @@
             ]
         }
     ],
-    "latex-workshop.latex.autoBuild.onSave.enabled": false
+    "latex-workshop.latex.autoBuild.onSave.enabled": false,
+    "workbench.colorTheme": "Dark (Molokai)"
 }
