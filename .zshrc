@@ -5,7 +5,7 @@ case $- in
 esac
 
 # suppress overlapping
-typeset -gU PATH
+typeset -gU PATH path
 
 emulate sh -c 'source /etc/profile'
 
