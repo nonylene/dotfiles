@@ -119,5 +119,6 @@
         }
     ],
     "latex-workshop.latex.autoBuild.onSave.enabled": false,
-    "workbench.colorTheme": "Dark (Molokai)"
+    "workbench.colorTheme": "Dark (Molokai)",
+    "explorer.confirmDragAndDrop": false
 }
