@@ -9,7 +9,7 @@
     "command": "workbench.action.previousEditor"
   },
   {
-    "key": "ctrl+;",
+    "key": "ctrl+[semicolon]",
     "command": "workbench.action.terminal.toggleTerminal"
   },
   {
@@ -19,5 +19,13 @@
   {
     "key": "cmd+b",
     "command": "editor.action.goToDeclaration"
+  },
+  {
+    "key": "ctrl+space",
+    "command": "workbench.action.togglePanel"
+  },
+  {
+    "key": "ctrl+j",
+    "command": "-workbench.action.togglePanel"
   }
 ]
