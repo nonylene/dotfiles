@@ -5,7 +5,7 @@ case $- in
 esac
 
 # suppress overlapping
-typeset -U PATH
+typeset -gU PATH
 
 emulate sh -c 'source /etc/profile'
 
@@ -75,7 +75,8 @@ function fin {
 }
 
 function dotfiles {
-  (cd ~/dotfiles; git pull origin master; ./deploy.sh); . ~/.zshrc
+  (cd ~/dotfiles; git pull origin master; ./deploy.sh)
+  source ~/.zshrc
 }
 
 export PATH="$HOME/local/bin:$PATH"
