@@ -33,8 +33,8 @@ alias 'vi'='vim'
 alias py='python3'
 alias ipy='ipython3'
 alias ll='ls -lh'
-alias la='ls -a'
-alias lla='ll -a'
+alias la='ls -A'
+alias lla='ll -A'
 alias g='git'
 alias e='exit'
 alias c='cat'
@@ -181,7 +181,7 @@ setopt hist_ignore_space
 
 # ctrl-w -> delete until '/'
 # treat these words as normal chalacters
-WORDCHARS='*?_-.[]~=&;!#$%^(){}<>|'
+WORDCHARS='*?_-[]~&;!#$%^(){}<>'
 
 if [ -n "$LS_COLORS" ]; then
   zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
@@ -216,3 +216,21 @@ source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # use per directory history!
 export PER_DIRECTORY_HISTORY_TOGGLE='^H'
 source ~/.zsh/per-directory-history/per-directory-history.zsh
+
+# ghq
+function ghq () {
+    if [ "$1" = look -a -n "$2" ]; then
+        cd $(command ghq list -p $2)
+        return
+    fi
+
+    command ghq "$@"
+}
+
+# mv with directory_history
+function gmv {
+  path1=`realpath $1`
+  path2=`realpath $2`
+  mv $path1 $path2
+  mv $HOME/.directory_history/$path1 $HOME/.directory_history/$path2
+}
