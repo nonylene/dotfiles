@@ -120,5 +120,6 @@
     ],
     "latex-workshop.latex.autoBuild.onSave.enabled": false,
     "workbench.colorTheme": "Dark (Molokai)",
-    "explorer.confirmDragAndDrop": false
+    "explorer.confirmDragAndDrop": false,
+    "breadcrumbs.enabled": true
 }
