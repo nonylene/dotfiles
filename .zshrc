@@ -67,7 +67,7 @@ export LC_COLLATE=ja_JP.UTF-8
 alias grep='grep --color=auto'
 
 function gr {
-  grep -rI --exclude-dir={.git,vendor} "$@" ./
+  grep -rI --exclude-dir={.git,vendor,.venv} "$@" ./
 }
 
 function fin {
