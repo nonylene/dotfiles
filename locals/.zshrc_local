@@ -10,3 +10,8 @@
 #
 # # launch_tmux
 # launch_tmux=true
+#
+# # homebrew
+# export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+# export HOMEBREW_NO_ANALYTICS=1
+# export HOMEBREW_NO_AUTO_UPDATE=1
