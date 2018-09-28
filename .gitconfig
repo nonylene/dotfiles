@@ -29,7 +29,7 @@
     autocrlf = input
     excludesfile = ~/.gitignore
 [user]
-  email = cookie.speaker@gmail.com
+  email = nonylene@gmail.com
   name = nonylene
 [url "git@github.com:"]
   pushInsteadOf = https://github.com/
