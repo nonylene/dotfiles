@@ -151,6 +151,8 @@ TRAPWINCH() {
 PROMPT='${prompt_header}
 %~ %(!. !root! #.>) '
 
+bindkey -M emacs "^F" forward-word
+bindkey -M emacs "^B" backward-word
 bindkey -e
 
 # completion
