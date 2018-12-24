@@ -1,13 +1,26 @@
 # vim: filetype=zsh
 
 # # ssh-agent
-# if [ ! -S ~/.ssh/ssh_auth_sock ]; then
-#   eval `ssh-agent`
-#   ln -sf "$SSH_AUTH_SOCK" ~/.ssh/ssh_auth_sock
+
+# SSH_AUTH_SOCK_LINK="${HOME}/.ssh/ssh_auth_sock"
+
+# # server
+# if [[ -n "$SSH_AUTH_SOCK" && "$SSH_AUTH_SOCK" != "$SSH_AUTH_SOCK_LINK" ]]; then
+#   mkdir -p $(dirname "$SSH_AUTH_SOCK_LINK")
+#   ln -sf "$SSH_AUTH_SOCK" "$SSH_AUTH_SOCK_LINK"
 # fi
-# export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock
+# export SSH_AUTH_SOCK="$SSH_AUTH_SOCK_LINK"
+
+# # client
+# if [ ! -S "$SSH_AUTH_SOCK_LINK" ]; then
+#   eval `ssh-agent`
+#   mkdir -p $(dirname "$SSH_AUTH_SOCK_LINK")
+#   ln -sf "$SSH_AUTH_SOCK" "$SSH_AUTH_SOCK_LINK"
+# fi
+# export SSH_AUTH_SOCK="$SSH_AUTH_SOCK_LINK"
+
 # ssh-add -l > /dev/null || ssh-add
-#
+
 # # launch_tmux
 # launch_tmux=true
 #

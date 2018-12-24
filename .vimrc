@@ -69,8 +69,11 @@ set wildmode=longest,list,full
 set pastetoggle=<C-k>
 
 " keymap
-" esc to c-f
-inoremap <C-f> <Esc>
+" emacs / bash
+inoremap <C-a> <Home>
+inoremap <C-e> <End>
+inoremap <C-f> <C-RIGHT>
+inoremap <C-b> <C-LEFT>
 " remove highlights
 nnoremap <Esc><Esc> <C-u>:noh<CR>
 

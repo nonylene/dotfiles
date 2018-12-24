@@ -6,6 +6,7 @@ esac
 
 # suppress overlapping
 typeset -gU PATH path
+typeset -gU LD_LIBRARY_PATH
 
 emulate sh -c 'source /etc/profile'
 
@@ -78,7 +79,7 @@ function dotfiles {
   source ~/.zshrc
 }
 
-export PATH="$HOME/local/bin:$PATH"
+export PATH="$HOME/local/bin:$HOME/.local/bin::$PATH"
 
 # gopath
 export GOPATH="${HOME}/go"
@@ -150,6 +151,8 @@ TRAPWINCH() {
 PROMPT='${prompt_header}
 %~ %(!. !root! #.>) '
 
+bindkey -M emacs "^F" forward-word
+bindkey -M emacs "^B" backward-word
 bindkey -e
 
 # completion
