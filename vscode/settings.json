@@ -33,7 +33,7 @@
             ]
         }
     ],
-    "vim.otherModesKeyBindings": [
+    "vim.normalModeKeyBindings": [
         {
             "before": [
                 "u"
@@ -121,5 +121,8 @@
     "latex-workshop.latex.autoBuild.onSave.enabled": false,
     "workbench.colorTheme": "Dark (Molokai)",
     "explorer.confirmDragAndDrop": false,
-    "breadcrumbs.enabled": true
+    "breadcrumbs.enabled": true,
+    "javascript.format.enable": false,
+    "eslint.autoFixOnSave": true,
+    "eslint.run": "onSave"
 }
