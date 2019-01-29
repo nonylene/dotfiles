@@ -84,6 +84,23 @@
     "search.location": "panel",
     "latex-workshop.latex.tools": [
         {
+            "name": "pbibtex",
+            "command": "pbibtex",
+            "args": [
+                "%DOCFILE%.aux"
+            ]
+        },
+        {
+            "name": "platex",
+            "command": "platex",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "%DOC%.tex"
+            ]
+        },
+        {
             "name": "uplatex",
             "command": "uplatex",
             "args": [
@@ -102,6 +119,22 @@
         }
     ],
     "latex-workshop.latex.recipes": [
+        {
+            "name": "platex -> pbibtex -> platex -> dvipdfmx",
+            "tools": [
+                "platex",
+                "pbibtex",
+                "platex",
+                "dvipdfmx",
+            ]
+        },
+        {
+            "name": "platex -> dvipdfmx",
+            "tools": [
+                "platex",
+                "dvipdfmx",
+            ]
+        },
         {
             "name": "uplatex -> dvipdfmx",
             "tools": [
@@ -124,5 +157,6 @@
     "breadcrumbs.enabled": true,
     "javascript.format.enable": false,
     "eslint.autoFixOnSave": true,
-    "eslint.run": "onSave"
+    "eslint.run": "onSave",
+    "latex-workshop.view.pdf.viewer": "browser"
 }
