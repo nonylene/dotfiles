@@ -42,7 +42,7 @@ set cindent
 
 " Change tabwidth by file type
 " kotlin is not included (not supported by default)
-au FileType python,java,scala,groovy
+au FileType java,scala,groovy
   \ setlocal tabstop=4 shiftwidth=4 softtabstop=4
 
 "-------Search--------
@@ -97,7 +97,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'itchyny/vim-cursorword'
 Plug 'tomtom/tcomment_vim'
 Plug 'tpope/vim-fugitive'
-" Plug '~/codes/vim-keymaps'
+Plug 'Vimjas/vim-python-pep8-indent'
 Plug 'nonylene/vim-keymaps'
 if v:version > 702
   Plug 'itchyny/lightline.vim'
