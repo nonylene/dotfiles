@@ -39,6 +39,7 @@ alias lla='ll -A'
 alias g='git'
 alias gdiff='git diff --no-index'
 alias c='cat'
+alias l='less'
 alias b='bundle'
 alias ta='tmux attach'
 
