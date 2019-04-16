@@ -30,7 +30,6 @@ export EDITOR=vim
 export LESS='-iMRXF'
 export PAGER=less
 alias 'v'='vim'
-alias 'vi'='vim'
 alias py='python3'
 alias ipy='ipython3'
 alias ll='ls -lh'
