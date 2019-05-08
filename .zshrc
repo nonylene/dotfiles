@@ -223,7 +223,7 @@ source ~/.zsh/per-directory-history/per-directory-history.zsh
 # ghq
 function ghq () {
     if [ "$1" = look -a -n "$2" ]; then
-        cd $(command ghq list -p $2)
+        cd $(command ghq list --exact -p $2)
         return
     fi
 
