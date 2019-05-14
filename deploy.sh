@@ -70,10 +70,6 @@ cp_local_unless_exists '.zshrc_local'
 cp_local_unless_exists '.gitconfig_local'
 cp_local_unless_exists '.tmux.conf_local'
 
-if [ -f ~/.tmux-server.conf ];then
-  echo -e "\033[1;31mPlease remove ~/.tmux-server.conf !!! no longer readed\033[0m"
-fi
-
 touch_unless_exists '.bashrc_local'
 
 # vim

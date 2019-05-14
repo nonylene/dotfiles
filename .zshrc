@@ -30,7 +30,6 @@ export EDITOR=vim
 export LESS='-iMRXF'
 export PAGER=less
 alias 'v'='vim'
-alias 'vi'='vim'
 alias py='python3'
 alias ipy='ipython3'
 alias ll='ls -lh'
@@ -39,6 +38,7 @@ alias lla='ll -A'
 alias g='git'
 alias gdiff='git diff --no-index'
 alias c='cat'
+alias l='less'
 alias b='bundle'
 alias ta='tmux attach'
 
@@ -223,7 +223,7 @@ source ~/.zsh/per-directory-history/per-directory-history.zsh
 # ghq
 function ghq () {
     if [ "$1" = look -a -n "$2" ]; then
-        cd $(command ghq list -p $2)
+        cd $(command ghq list --exact -p $2)
         return
     fi
 
