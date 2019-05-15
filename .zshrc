@@ -156,6 +156,8 @@ bindkey -M emacs "^F" forward-word
 bindkey -M emacs "^B" backward-word
 bindkey -e
 
+fpath=($HOME/.zsh/site-functions $fpath)
+
 # completion
 autoload -U compinit; compinit
 

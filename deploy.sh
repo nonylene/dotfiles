@@ -81,7 +81,7 @@ fi
 
 # zsh
 if [ ! -e ~/.zsh ];then
-    mkdir ~/.zsh
+    mkdir ~/.zsh/site-functions
     git clone https://github.com/zsh-users/zsh-syntax-highlighting ~/.zsh/zsh-syntax-highlighting
     git clone https://github.com/seebi/dircolors-solarized ~/.zsh/dircolors-solarized
     git clone https://github.com/jimhester/per-directory-history.git ~/.zsh/per-directory-history
