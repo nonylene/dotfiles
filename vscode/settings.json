@@ -158,5 +158,6 @@
     "javascript.format.enable": false,
     "eslint.autoFixOnSave": true,
     "eslint.run": "onSave",
-    "latex-workshop.view.pdf.viewer": "browser"
+    "latex-workshop.view.pdf.viewer": "browser",
+    "merge-conflict.diffViewPosition": "Below",
 }
