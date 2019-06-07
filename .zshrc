@@ -156,6 +156,8 @@ bindkey -M emacs "^F" forward-word
 bindkey -M emacs "^B" backward-word
 bindkey -e
 
+fpath=($HOME/.zsh/site-functions $fpath)
+
 # completion
 autoload -U compinit; compinit
 
@@ -223,7 +225,7 @@ source ~/.zsh/per-directory-history/per-directory-history.zsh
 # ghq
 function ghq () {
     if [ "$1" = look -a -n "$2" ]; then
-        cd $(command ghq list -p $2)
+        cd $(command ghq list --exact -p $2)
         return
     fi
 
