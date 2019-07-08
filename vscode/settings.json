@@ -4,7 +4,7 @@
     "editor.tabSize": 2,
     "editor.renderControlCharacters": true,
     "editor.renderWhitespace": "boundary",
-    "workbench.tree.horizontalScrolling": true,
+    "workbench.list.horizontalScrolling": true,
     "editor.wordWrap": "on",
     "editor.minimap.enabled": false,
     "editor.suggestLineHeight": 28,
@@ -84,80 +84,24 @@
     "search.location": "panel",
     "latex-workshop.latex.tools": [
         {
-            "name": "pbibtex",
-            "command": "pbibtex",
+            "name": "latexmk",
+            "command": "latexmk",
             "args": [
-                "%DOCFILE%.aux"
-            ]
+                "-outdir=%OUTDIR%",
+                "%DOC%"
+            ],
         },
-        {
-            "name": "platex",
-            "command": "platex",
-            "args": [
-                "-synctex=1",
-                "-interaction=nonstopmode",
-                "-file-line-error",
-                "%DOC%.tex"
-            ]
-        },
-        {
-            "name": "uplatex",
-            "command": "uplatex",
-            "args": [
-                "-synctex=1",
-                "-interaction=nonstopmode",
-                "-file-line-error",
-                "%DOC%.tex"
-            ]
-        },
-        {
-            "name": "dvipdfmx",
-            "command": "dvipdfmx",
-            "args": [
-                "%DOC%.dvi"
-            ]
-        }
     ],
-    "latex-workshop.latex.recipes": [
-        {
-            "name": "platex -> pbibtex -> platex -> dvipdfmx",
-            "tools": [
-                "platex",
-                "pbibtex",
-                "platex",
-                "dvipdfmx",
-            ]
-        },
-        {
-            "name": "platex -> dvipdfmx",
-            "tools": [
-                "platex",
-                "dvipdfmx",
-            ]
-        },
-        {
-            "name": "uplatex -> dvipdfmx",
-            "tools": [
-                "uplatex",
-                "dvipdfmx",
-            ]
-        },
-        {
-            "name": "uplatex*2 -> dvipdfmx",
-            "tools": [
-                "uplatex",
-                "uplatex",
-                "dvipdfmx",
-            ]
-        }
-    ],
-    "latex-workshop.latex.autoBuild.onSave.enabled": false,
-    "workbench.colorTheme": "Dark (Molokai)",
     "explorer.confirmDragAndDrop": false,
     "breadcrumbs.enabled": true,
     "javascript.format.enable": false,
-    "eslint.autoFixOnSave": true,
     "eslint.run": "onSave",
     "latex-workshop.view.pdf.viewer": "browser",
+    "eslint.autoFixOnSave": true,
+    "latex-workshop.latex.autoBuild.run": "never",
     "merge-conflict.diffViewPosition": "Below",
+    "markdown-pdf.styles": [],
+    "markdown-pdf.displayHeaderFooter": false,
+    "markdown-pdf.includeDefaultStyles": false,
+    "workbench.colorTheme": "Dark (Molokai)",
 }
