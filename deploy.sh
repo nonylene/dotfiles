@@ -72,6 +72,12 @@ cp_local_unless_exists '.tmux.conf_local'
 
 touch_unless_exists '.bashrc_local'
 
+if [ -L "$HOME/.xvimrc" ];then
+  echo -e "\033[1;31mRemoving ~/.xvimrc\033[0m"
+  rm -rf "$HOME/.xvimrc"
+fi
+
+
 # vim
 plug_file="$HOME/.vim/autoload/plug.vim"
 if [ ! -f $plug_file ];then
