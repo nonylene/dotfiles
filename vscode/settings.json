@@ -1,29 +1,150 @@
 // Place your settings in this file to overwrite the default settings
 {
-    "editor.fontSize": 15,
-    "editor.tabSize": 2,
-    "editor.renderControlCharacters": true,
-    "editor.renderWhitespace": "boundary",
-    "workbench.list.horizontalScrolling": true,
-    "editor.wordWrap": "on",
-    "editor.minimap.enabled": false,
-    "editor.suggestLineHeight": 28,
-    "editor.cursorBlinking": "solid",
-    "window.openFoldersInNewWindow": "on",
-    "files.hotExit": "off",
-    "search.quickOpen.includeSymbols": true,
-    "terminal.external.osxExec": "iTerm.app",
-    "terminal.integrated.fontSize": 15,
-    "terminal.integrated.scrollback": 5000,
-    "telemetry.enableCrashReporter": false,
-    "telemetry.enableTelemetry": false,
-    "git.autofetch": false,
-    "vim.overrideCopy": false,
-    "vim.statusBarColorControl": false,
-    "window.zoomLevel": 0,
-    "vim.hlsearch": true,
-    "python.linting.flake8Enabled": true,
     "vim.insertModeKeyBindingsNonRecursive": [
+        {
+            "before": [
+                "1"
+            ],
+            "after": [
+                "!"
+            ]
+        },
+        {
+            "before": [
+                "2"
+            ],
+            "after": [
+                "\""
+            ]
+        },
+        {
+            "before": [
+                "3"
+            ],
+            "after": [
+                "#"
+            ]
+        },
+        {
+            "before": [
+                "4"
+            ],
+            "after": [
+                "$"
+            ]
+        },
+        {
+            "before": [
+                "5"
+            ],
+            "after": [
+                "%"
+            ]
+        },
+        {
+            "before": [
+                "6"
+            ],
+            "after": [
+                "&"
+            ]
+        },
+        {
+            "before": [
+                "7"
+            ],
+            "after": [
+                "'"
+            ]
+        },
+        {
+            "before": [
+                "8"
+            ],
+            "after": [
+                "("
+            ]
+        },
+        {
+            "before": [
+                "9"
+            ],
+            "after": [
+                ")"
+            ]
+        },
+        {
+            "before": [
+                "!"
+            ],
+            "after": [
+                "1"
+            ]
+        },
+        {
+            "before": [
+                "\""
+            ],
+            "after": [
+                "2"
+            ]
+        },
+        {
+            "before": [
+                "#"
+            ],
+            "after": [
+                "3"
+            ]
+        },
+        {
+            "before": [
+                "$"
+            ],
+            "after": [
+                "4"
+            ]
+        },
+        {
+            "before": [
+                "%"
+            ],
+            "after": [
+                "5"
+            ]
+        },
+        {
+            "before": [
+                "&"
+            ],
+            "after": [
+                "6"
+            ]
+        },
+        {
+            "before": [
+                "'"
+            ],
+            "after": [
+                "7"
+            ]
+        },
+        {
+            "before": [
+                "("
+            ],
+            "after": [
+                "8"
+            ]
+        },
+        {
+            "before": [
+                ")"
+            ],
+            "after": [
+                "9"
+            ]
+        },
         {
             "before": [
                 "<C-f>"
@@ -57,6 +178,321 @@
             ]
         }
     ],
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": [
+                "1"
+            ],
+            "after": [
+                "!"
+            ]
+        },
+        {
+            "before": [
+                "2"
+            ],
+            "after": [
+                "\""
+            ]
+        },
+        {
+            "before": [
+                "3"
+            ],
+            "after": [
+                "#"
+            ]
+        },
+        {
+            "before": [
+                "4"
+            ],
+            "after": [
+                "$"
+            ]
+        },
+        {
+            "before": [
+                "5"
+            ],
+            "after": [
+                "%"
+            ]
+        },
+        {
+            "before": [
+                "6"
+            ],
+            "after": [
+                "&"
+            ]
+        },
+        {
+            "before": [
+                "7"
+            ],
+            "after": [
+                "'"
+            ]
+        },
+        {
+            "before": [
+                "8"
+            ],
+            "after": [
+                "("
+            ]
+        },
+        {
+            "before": [
+                "9"
+            ],
+            "after": [
+                ")"
+            ]
+        },
+        {
+            "before": [
+                "!"
+            ],
+            "after": [
+                "1"
+            ]
+        },
+        {
+            "before": [
+                "\""
+            ],
+            "after": [
+                "2"
+            ]
+        },
+        {
+            "before": [
+                "#"
+            ],
+            "after": [
+                "3"
+            ]
+        },
+        {
+            "before": [
+                "$"
+            ],
+            "after": [
+                "4"
+            ]
+        },
+        {
+            "before": [
+                "%"
+            ],
+            "after": [
+                "5"
+            ]
+        },
+        {
+            "before": [
+                "&"
+            ],
+            "after": [
+                "6"
+            ]
+        },
+        {
+            "before": [
+                "'"
+            ],
+            "after": [
+                "7"
+            ]
+        },
+        {
+            "before": [
+                "("
+            ],
+            "after": [
+                "8"
+            ]
+        },
+        {
+            "before": [
+                ")"
+            ],
+            "after": [
+                "9"
+            ]
+        },
+    ],
+    "vim.visualModeKeyBindingsNonRecursive": [
+        {
+            "before": [
+                "1"
+            ],
+            "after": [
+                "!"
+            ]
+        },
+        {
+            "before": [
+                "2"
+            ],
+            "after": [
+                "\""
+            ]
+        },
+        {
+            "before": [
+                "3"
+            ],
+            "after": [
+                "#"
+            ]
+        },
+        {
+            "before": [
+                "4"
+            ],
+            "after": [
+                "$"
+            ]
+        },
+        {
+            "before": [
+                "5"
+            ],
+            "after": [
+                "%"
+            ]
+        },
+        {
+            "before": [
+                "6"
+            ],
+            "after": [
+                "&"
+            ]
+        },
+        {
+            "before": [
+                "7"
+            ],
+            "after": [
+                "'"
+            ]
+        },
+        {
+            "before": [
+                "8"
+            ],
+            "after": [
+                "("
+            ]
+        },
+        {
+            "before": [
+                "9"
+            ],
+            "after": [
+                ")"
+            ]
+        },
+        {
+            "before": [
+                "!"
+            ],
+            "after": [
+                "1"
+            ]
+        },
+        {
+            "before": [
+                "\""
+            ],
+            "after": [
+                "2"
+            ]
+        },
+        {
+            "before": [
+                "#"
+            ],
+            "after": [
+                "3"
+            ]
+        },
+        {
+            "before": [
+                "$"
+            ],
+            "after": [
+                "4"
+            ]
+        },
+        {
+            "before": [
+                "%"
+            ],
+            "after": [
+                "5"
+            ]
+        },
+        {
+            "before": [
+                "&"
+            ],
+            "after": [
+                "6"
+            ]
+        },
+        {
+            "before": [
+                "'"
+            ],
+            "after": [
+                "7"
+            ]
+        },
+        {
+            "before": [
+                "("
+            ],
+            "after": [
+                "8"
+            ]
+        },
+        {
+            "before": [
+                ")"
+            ],
+            "after": [
+                "9"
+            ]
+        },
+    ],
+    "editor.fontSize": 15,
+    "editor.tabSize": 2,
+    "editor.renderControlCharacters": true,
+    "editor.renderWhitespace": "boundary",
+    "workbench.list.horizontalScrolling": true,
+    "editor.wordWrap": "on",
+    "editor.minimap.enabled": false,
+    "editor.suggestLineHeight": 28,
+    "editor.cursorBlinking": "solid",
+    "window.openFoldersInNewWindow": "on",
+    "files.hotExit": "off",
+    "search.quickOpen.includeSymbols": true,
+    "terminal.external.osxExec": "iTerm.app",
+    "terminal.integrated.fontSize": 15,
+    "terminal.integrated.scrollback": 5000,
+    "telemetry.enableCrashReporter": false,
+    "telemetry.enableTelemetry": false,
+    "git.autofetch": false,
+    "vim.overrideCopy": false,
+    "vim.statusBarColorControl": false,
+    "window.zoomLevel": 0,
+    "vim.hlsearch": true,
+    "python.linting.flake8Enabled": true,
     "files.exclude": {
         "**/.git": true,
         "**/.svn": true,
