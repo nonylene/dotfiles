@@ -534,7 +534,6 @@
     "eslint.run": "onSave",
     "latex-workshop.view.pdf.viewer": "browser",
     "eslint.autoFixOnSave": true,
-    "latex-workshop.latex.autoBuild.run": "never",
     "merge-conflict.diffViewPosition": "Below",
     "markdown-pdf.styles": [],
     "markdown-pdf.displayHeaderFooter": false,
