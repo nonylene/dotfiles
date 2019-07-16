@@ -67,7 +67,7 @@ function cp_local_unless_exists() {
 }
 
 cp_local_unless_exists '.zshrc_local'
-cp_local_unless_exists '.gitconfig_local'
+cp_local_unless_exists '.config/git/config_local'
 cp_local_unless_exists '.tmux.conf_local'
 
 touch_unless_exists '.bashrc_local'

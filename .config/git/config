@@ -24,10 +24,9 @@
     ap = add -p
     lg = log --graph --all --format='%x09%C(cyan bold)%an%Creset%x09%C(yellow)%h%Creset %C(magenta reverse)%d%Creset %s'
 [core]
-    hooksPath = ~/.githooks
+    hooksPath = ~/.config/git/hooks
     pager = less
     autocrlf = input
-    excludesfile = ~/.gitignore
 [user]
   email = nonylene@gmail.com
   name = nonylene
@@ -46,4 +45,4 @@
 	file = "https://{host}/{path}/{file.directory? and :tree or :blob}/{short_rev}/{file}{lines && \"#L%s\" % lines.join(\"-\")}"
 
 [include]
-    path = ~/.gitconfig_local
+    path = ~/.config/git/config_local
