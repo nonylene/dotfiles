@@ -539,4 +539,5 @@
     "markdown-pdf.displayHeaderFooter": false,
     "markdown-pdf.includeDefaultStyles": false,
     "workbench.colorTheme": "Dark (Molokai)",
+    "C_Cpp.clang_format_fallbackStyle": "Google",
 }
