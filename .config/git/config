@@ -11,7 +11,7 @@
     cm = commit -m
     ca = commit --amend
     com = checkout master
-    cod = checkout dev
+    cod = checkout develop
     cp = cherry-pick
     s = status
     gr = grep
