@@ -66,17 +66,34 @@ function cp_local_unless_exists() {
   fi
 }
 
+function remove_if_exists() {
+  if [[ -L "$HOME/$1" ]];then
+    echo -e "\033[1;31mRemoving ~/$1\033[0m"
+    rm -rf "$HOME/$1"
+  fi
+}
+
+function warn_if_exists() {
+  if [ -e "$HOME/$1" ];then
+    echo -e "\033[1;31m~/$1 is moved. Please migrate.\033[0m"
+  fi
+}
+
+
 cp_local_unless_exists '.zshrc_local'
 cp_local_unless_exists '.config/git/config_local'
 cp_local_unless_exists '.tmux.conf_local'
 
 touch_unless_exists '.bashrc_local'
 
-if [ -L "$HOME/.xvimrc" ];then
-  echo -e "\033[1;31mRemoving ~/.xvimrc\033[0m"
-  rm -rf "$HOME/.xvimrc"
-fi
+remove_if_exists '.xvimrc'
+remove_if_exists '.gitconfig'
+remove_if_exists '.gitignore'
+remove_if_exists '.githooks/post-commit'
+remove_if_exists '.githooks/pre-commit'
 
+warn_if_exists '.gitconfig_local'
+warn_if_exists '.githooks'
 
 # vim
 plug_file="$HOME/.vim/autoload/plug.vim"
