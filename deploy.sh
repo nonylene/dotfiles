@@ -68,7 +68,7 @@ function cp_local_unless_exists() {
 
 function remove_if_exists() {
   if [[ -L "$HOME/$1" ]];then
-    echo -e "\033[1;31mRemoving ~/$1\033[0m"
+    echo -e "\033[1;33mRemoving ~/$1\033[0m"
     rm -rf "$HOME/$1"
   fi
 }
@@ -91,6 +91,8 @@ remove_if_exists '.gitconfig'
 remove_if_exists '.gitignore'
 remove_if_exists '.githooks/post-commit'
 remove_if_exists '.githooks/pre-commit'
+remove_if_exists '.config/redshift.conf'
+remove_if_exists '.tigrc'
 
 warn_if_exists '.gitconfig_local'
 warn_if_exists '.githooks'
