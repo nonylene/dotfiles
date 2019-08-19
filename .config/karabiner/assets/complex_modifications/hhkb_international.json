@@ -1,0 +1,54 @@
+{
+  "title": "HHKB international modification",
+  "rules": [
+    {
+      "description": "HHKB international modification",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "international4"
+          },
+          "conditions": [
+            {
+              "type": "device_if",
+              "identifiers": [
+                {
+                  "product_id": 13,
+                  "vendor_id": 1278
+                }
+              ]
+            }
+          ],
+          "to": [
+            {
+              "key_code": "lang1"
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "international5"
+          },
+          "conditions": [
+            {
+              "type": "device_if",
+              "identifiers": [
+                {
+                  "product_id": 13,
+                  "vendor_id": 1278
+                }
+              ]
+            }
+          ],
+          "to": [
+            {
+              "key_code": "lang2"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
