@@ -11,7 +11,7 @@
     cm = commit -m
     ca = commit --amend
     com = checkout master
-    cod = checkout dev
+    cod = checkout develop
     cp = cherry-pick
     s = status
     gr = grep
@@ -23,6 +23,7 @@
     aa = add -A
     ap = add -p
     lg = log --graph --all --format='%x09%C(cyan bold)%an%Creset%x09%C(yellow)%h%Creset %C(magenta reverse)%d%Creset %s'
+    r = reset
 [core]
     hooksPath = ~/.config/git/hooks
     pager = less

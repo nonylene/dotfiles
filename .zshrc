@@ -23,6 +23,7 @@ autoload -Uz zmv
 alias mmv='noglob zmv -W'
 
 export EDITOR=vim
+export XDG_CONFIG_HOME=$HOME/.config
 # i : ignore case
 # M : long prompt
 # R : colorize
