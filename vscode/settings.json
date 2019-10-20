@@ -553,4 +553,5 @@
         }
     ],
     "editor.cursorSurroundingLines": 3,
+    "go.useLanguageServer": true,
 }
