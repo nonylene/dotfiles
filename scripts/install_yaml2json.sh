@@ -7,7 +7,7 @@ mkdir $HOME/local/bin -p
 TEMP=`mktemp -d`
 pushd $TEMP
 
-filename="yaml2json-`uname -o`-`uname -m`"
+filename="yaml2json-`uname`-`uname -m`"
 
 wget https://github.com/nonylene/yaml2json/releases/latest/download/$filename.zip
 unzip $filename.zip
