@@ -6,6 +6,7 @@ esac
 
 # suppress overlapping
 typeset -gU PATH path
+typeset -gU fpath
 typeset -gU LD_LIBRARY_PATH
 
 emulate sh -c 'source /etc/profile'
