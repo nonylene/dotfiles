@@ -558,7 +558,5 @@
     ],
     "editor.cursorSurroundingLines": 3,
     "metals.javaHome": "/Library/Java/JavaVirtualMachines/adoptopenjdk-11.jdk/Contents/Home",
-    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-    "java.errors.incompleteClasspath.severity": "ignore",
     "go.useLanguageServer": true,
 }
