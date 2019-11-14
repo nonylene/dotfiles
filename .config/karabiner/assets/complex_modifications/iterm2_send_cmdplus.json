@@ -1,0 +1,43 @@
+{
+  "title": "Send Cmd+'+' on iTerm2",
+  "rules": [
+    {
+      "description": "Send Cmd+'+' on iTerm2",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "semicolon",
+            "modifiers": {
+              "mandatory": [
+                "command", "shift"
+              ]
+            }
+          },
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "com.googlecode.iterm2"
+              ]
+            },
+            {
+              "type": "keyboard_type_if",
+              "keyboard_types": [
+                "jis"
+              ]
+            }
+          ],
+          "to": [
+            {
+              "key_code": "keypad_plus",
+              "modifiers": [
+                "left_command"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
