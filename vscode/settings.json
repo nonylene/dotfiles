@@ -499,7 +499,11 @@
         "**/.hg": true,
         "**/CVS": true,
         "**/.DS_Store": true,
-        "**/bundle": true
+        "**/bundle": true,
+        "**/.classpath": true,
+        "**/.project": true,
+        "**/.settings": true,
+        "**/.factorypath": true
     },
     "window.title": "${activeEditorMedium}${separator}${rootName}",
     "search.smartCase": true,
@@ -553,4 +557,6 @@
         }
     ],
     "editor.cursorSurroundingLines": 3,
+    "metals.javaHome": "/Library/Java/JavaVirtualMachines/adoptopenjdk-11.jdk/Contents/Home",
+    "go.useLanguageServer": true,
 }

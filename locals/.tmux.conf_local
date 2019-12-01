@@ -1,6 +1,5 @@
 # vim: set ft=tmux :
 
-# set -g default-command "reattach-to-user-namespace -l ${SHELL}"
 # bind -T copy-mode-vi Enter send-keys -X copy-pipe-and-cancel "clip.exe"
 
 # set -g status-bg colour250

@@ -27,5 +27,13 @@
   {
     "key": "ctrl+j",
     "command": "-workbench.action.togglePanel"
-  }
+  },
+  {
+    "key": "cmd+left",
+    "command": "workbench.action.navigateBack"
+  },
+  {
+    "key": "cmd+right",
+    "command": "workbench.action.navigateForward"
+  },
 ]
