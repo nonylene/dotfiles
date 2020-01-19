@@ -224,15 +224,31 @@ source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 export PER_DIRECTORY_HISTORY_TOGGLE='^H'
 source ~/.zsh/per-directory-history/per-directory-history.zsh
 
-# ghq
-function ghq () {
-    if [ "$1" = look -a -n "$2" ]; then
-        cd $(command ghq list --exact -p $2)
+# ghq-cd
+## https://github.com/motemen/ghq/issues/268#issuecomment-573403493
+function ghq-cd {
+    if [ -n "$1" ]; then
+        dir="$(ghq list --full-path --exact "$1")"
+        if [ -z "$dir" ]; then
+            echo "No directroies found for '$1'"
+            return 1
+        fi
+        cd "$dir"
         return
     fi
 
-    command ghq "$@"
+    echo 'Usage: ghq-cd {repo}'
+    return 1
 }
+
+## https://github.com/motemen/ghq/blob/3981090302a12b29c0c96736fc0aafe5a83a109d/misc/zsh/_ghq#L63-L67
+function _ghq-cd {
+  local -a _repos
+  _repos=( ${(@f)"$(_call_program repositories ghq list --unique)"} )
+  _describe -t repositories Repositories _repos
+}
+
+compdef _ghq-cd ghq-cd
 
 # mv with directory_history
 function gmv {
