@@ -33,3 +33,6 @@
 #
 # # LaTeX
 # export PATH="/usr/local/texlive/2019basic/bin/x86_64-darwin:$PATH"
+#
+# # kubectl
+# source <(kubectl completion zsh)
