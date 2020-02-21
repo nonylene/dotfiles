@@ -521,7 +521,6 @@
     "editor.formatOnSave": true,
     "workbench.editor.enablePreviewFromQuickOpen": false,
     "workbench.editor.enablePreview": false,
-    "search.location": "panel",
     "latex-workshop.latex.tools": [
         {
             "name": "latexmk",
@@ -541,7 +540,6 @@
     "markdown-pdf.styles": [],
     "markdown-pdf.displayHeaderFooter": false,
     "markdown-pdf.includeDefaultStyles": false,
-    "workbench.colorTheme": "Dark (Molokai)",
     "C_Cpp.clang_format_fallbackStyle": "Google",
     "eslint.autoFixOnSave": true,
     "eslint.validate": [
@@ -559,4 +557,11 @@
     "editor.cursorSurroundingLines": 3,
     "metals.javaHome": "/Library/Java/JavaVirtualMachines/adoptopenjdk-11.jdk/Contents/Home",
     "go.useLanguageServer": true,
+    "workbench.colorTheme": "Dark (Molokai)",
+    "[yaml]": {
+        "editor.formatOnSave": false,
+    },
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true
+    },
 }
