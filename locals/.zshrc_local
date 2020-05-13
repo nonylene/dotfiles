@@ -36,3 +36,9 @@
 #
 # # kubectl
 # source <(kubectl completion zsh)
+#
+# # Cron for WSL
+# if ! service cron status > /dev/null; then
+#   echo "Starting cron..."
+#   sudo service cron start
+# fi
