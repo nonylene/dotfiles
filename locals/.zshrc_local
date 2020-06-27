@@ -19,6 +19,14 @@
 # fi
 # export SSH_AUTH_SOCK="$SSH_AUTH_SOCK_LINK"
 
+# # For WSL
+# ssh-add -l >/dev/null 2>&1
+# SSH_ADD_CODE=$?
+#
+# # client
+# if [[ ! -S "$SSH_AUTH_SOCK_LINK" || $SSH_ADD_CODE = 2 ]]; then
+# ...
+
 # ssh-add -l > /dev/null || ssh-add
 
 # # launch_tmux
