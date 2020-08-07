@@ -47,3 +47,5 @@
 
 [include]
     path = ~/.config/git/config_local
+[pull]
+	ff = only
