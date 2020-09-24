@@ -470,7 +470,7 @@
             ]
         },
     ],
-    "editor.fontSize": 15,
+    "editor.fontSize": 14,
     "editor.tabSize": 2,
     "editor.renderControlCharacters": true,
     "editor.renderWhitespace": "boundary",
@@ -518,7 +518,6 @@
     "go.formatTool": "goimports",
     "workbench.startupEditor": "newUntitledFile",
     "extensions.ignoreRecommendations": false,
-    "editor.formatOnSave": true,
     "workbench.editor.enablePreviewFromQuickOpen": false,
     "workbench.editor.enablePreview": false,
     "latex-workshop.latex.tools": [
@@ -541,18 +540,11 @@
     "markdown-pdf.displayHeaderFooter": false,
     "markdown-pdf.includeDefaultStyles": false,
     "C_Cpp.clang_format_fallbackStyle": "Google",
-    "eslint.autoFixOnSave": true,
     "eslint.validate": [
         "javascript",
         "javascriptreact",
-        {
-            "language": "typescript",
-            "autoFix": true
-        },
-        {
-            "language": "typescriptreact",
-            "autoFix": true
-        }
+        "typescript",
+        "typescriptreact",
     ],
     "editor.cursorSurroundingLines": 3,
     "metals.javaHome": "/Library/Java/JavaVirtualMachines/adoptopenjdk-11.jdk/Contents/Home",
@@ -564,4 +556,7 @@
     "editor.codeActionsOnSave": {
         "source.fixAll.eslint": true
     },
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "editor.formatOnSave": true,
 }
