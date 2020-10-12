@@ -204,7 +204,7 @@ if [[ -z $launch_tmux ]]; then
       ;;
     linux*)
       # do not launch tmux without iTerm2
-      [ "$TERM_PROGRAM" != 'vscode' ] && launch_tmux=false
+      [ "$TERM_PROGRAM" != 'vscode' ] && launch_tmux=true
       ;;
     *)
       # without mac!

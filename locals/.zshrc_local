@@ -23,9 +23,14 @@
 # ssh-add -l >/dev/null 2>&1
 # SSH_ADD_CODE=$?
 #
-# # client
+# # client (WSL)
 # if [[ ! -S "$SSH_AUTH_SOCK_LINK" || $SSH_ADD_CODE = 2 ]]; then
-# ...
+#   unset SSH_AUTH_SOCK
+#   rm -rf /tmp/ssh-*
+#   eval `ssh-agent`
+#   mkdir -p $(dirname "$SSH_AUTH_SOCK_LINK")
+#   ln -sf "$SSH_AUTH_SOCK" "$SSH_AUTH_SOCK_LINK"
+# fi
 
 # ssh-add -l > /dev/null || ssh-add
 
@@ -45,8 +50,9 @@
 # # kubectl
 # source <(kubectl completion zsh)
 #
-# # Cron for WSL
-# if ! service cron status > /dev/null; then
-#   echo "Starting cron..."
-#   sudo service cron start
-# fi
+
+# # WSL open with explorer
+#
+# function explorer {
+#   (cd $1 && explorer.exe .)
+# }
