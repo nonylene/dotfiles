@@ -34,25 +34,6 @@ for f in .[!.]*; do
     fi
 done
 
-# vscode
-case `uname` in
-  'Darwin')
-    VSCODE_DIR="$HOME/Library/Application Support/Code/User"
-    ;;
-  'Linux')
-    VSCODE_DIR="$HOME/.config/Code/User"
-    ;;
-esac
-
-if [[ -n $VSCODE_DIR ]]; then
-  for f in 'keybindings.json' 'settings.json'; do
-    file="$VSCODE_DIR/$f"
-    if [[ ! -L "$file" ]]; then
-      ln -s ~/dotfiles/vscode/$f "$file"
-    fi
-  done
-fi
-
 # local configs
 function touch_unless_exists() {
   if [ ! -f ~/$1 ];then
