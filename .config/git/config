@@ -36,8 +36,8 @@
 [url "git@gist.github.com:"]
   pushInsteadOf = https://gist.github.com/
 [ghq]
-  root = ~/ghq/
   root = ~/go/src/
+  root = ~/ghq/
 [browse-remote "github.com"]
 	top = https://{host}/{path}
 	ref = https://{host}/{path}/tree/{short_ref}
@@ -49,3 +49,5 @@
     path = ~/.config/git/config_local
 [pull]
 	ff = only
+[init]
+	defaultBranch = main
