@@ -10,7 +10,7 @@
     bra = branch
     cm = commit -m
     ca = commit --amend
-    com = checkout master
+    com = !git checkout master || git checkout main
     cod = checkout develop
     cp = cherry-pick
     s = status
