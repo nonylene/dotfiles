@@ -35,8 +35,8 @@
 [url "git@gist.github.com:"]
   pushInsteadOf = https://gist.github.com/
 [ghq]
-  root = ~/go/src/
   root = ~/ghq/
+  root = ~/go/src/
 [browse-remote "github.com"]
 	top = https://{host}/{path}
 	ref = https://{host}/{path}/tree/{short_ref}
