@@ -20,6 +20,7 @@
 # export SSH_AUTH_SOCK="$SSH_AUTH_SOCK_LINK"
 
 # # For WSL
+# export SSH_AUTH_SOCK="$SSH_AUTH_SOCK_LINK"
 # ssh-add -l >/dev/null 2>&1
 # SSH_ADD_CODE=$?
 #
