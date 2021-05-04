@@ -88,6 +88,14 @@ export PATH="$HOME/local/bin:$HOME/.local/bin::$PATH"
 export GOPATH="${HOME}/go"
 export PATH="$GOPATH/bin:$PATH"
 
+# completion
+autoload -U compinit; compinit
+
+zstyle ':completion:*:default' menu select=1
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
+zstyle ':completion:*:processes' menu yes select=1
+zstyle ':completion:*' use-cache true
+
 # include path etc
 [ -f ~/.zshrc_local ] && source ~/.zshrc_local
 
@@ -159,17 +167,6 @@ bindkey -M emacs "^B" backward-word
 bindkey -e
 
 fpath=($HOME/.zsh/site-functions $fpath)
-
-# completion
-autoload -U compinit; compinit
-
-# do not expand glob directly
-setopt glob_complete
-
-zstyle ':completion:*:default' menu select=1
-zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
-zstyle ':completion:*:processes' menu yes select=1
-zstyle ':completion:*' use-cache true
 
 # use []^ etc.
 setopt no_nomatch

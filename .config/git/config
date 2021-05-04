@@ -36,7 +36,6 @@
   pushInsteadOf = https://gist.github.com/
 [ghq]
   root = ~/ghq/
-  root = ~/go/src/
 [browse-remote "github.com"]
 	top = https://{host}/{path}
 	ref = https://{host}/{path}/tree/{short_ref}
