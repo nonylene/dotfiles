@@ -2,7 +2,7 @@
 set -eu
 
 exec < /dev/tty
-echo -n "push? [y/n]: "
+echo -n "Push? [y/N]: "
 read answer_push
 if [[ $answer_push == y* ]]; then
     default_rb="origin `git symbolic-ref --short HEAD`"
