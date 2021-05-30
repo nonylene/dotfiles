@@ -3,3 +3,4 @@
 .*.swp
 vendor/bundle
 .bundle
+__nogit

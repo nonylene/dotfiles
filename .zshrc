@@ -4,6 +4,9 @@ case $- in
       *) return;;
 esac
 
+# Disable ctrl-s to pause
+stty -ixon
+
 # suppress overlapping
 typeset -gU PATH path
 typeset -gU fpath
