@@ -88,6 +88,10 @@ endif
 map <C-k> <Plug>KeyMapRotate
 map! <C-k> <Plug>KeyMapRotate
 
+" Disable increment / decrement
+map <C-a> <Nop>
+map <C-x> <Nop>
+
 " plug
 call plug#begin('~/.vim/plugged')
 Plug 'tomasr/molokai'
