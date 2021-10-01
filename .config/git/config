@@ -23,6 +23,7 @@
     aa = add -A
     ap = add -p
     lg = log --graph --all --format='%x09%C(cyan bold)%an%Creset%x09%C(yellow)%h%Creset %C(magenta reverse)%d%Creset %s'
+    branch-prune = !git branch --merged | egrep -v '(^\\*|master|main)' | xargs git branch -d
 [core]
     hooksPath = ~/.config/git/hooks
     pager = less
