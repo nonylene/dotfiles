@@ -80,7 +80,7 @@ function fin {
 }
 
 function dotfiles {
-  (cd ~/dotfiles; git pull origin master; ./deploy.sh)
+  (cd ~/dotfiles; git pull origin main; ./deploy.sh)
   source ~/.zshrc
 }
 
