@@ -91,11 +91,11 @@ export PATH="$HOME/local/bin:$HOME/.local/bin::$PATH"
 export GOPATH="${HOME}/go"
 export PATH="$GOPATH/bin:$PATH"
 
-# include path etc
-[ -f ~/.zshrc_local ] && source ~/.zshrc_local
-
 # completion
 autoload -U compinit; compinit
+
+# include path etc
+[ -f ~/.zshrc_local ] && source ~/.zshrc_local
 
 zstyle ':completion:*:default' menu select=1
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
