@@ -17,7 +17,7 @@
     gr = grep
     df = diff
     dfc = diff --cached
-    pp = pull --prune
+    p = pull
     sta = stash
     au = add -u
     aa = add -A
@@ -52,3 +52,5 @@
 	defaultBranch = main
 [commit]
 	verbose = true
+[fetch]
+	prune = true
