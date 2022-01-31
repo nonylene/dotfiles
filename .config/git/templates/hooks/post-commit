@@ -4,7 +4,7 @@ set -eu
 exec < /dev/tty
 echo -n "Push? [y/N]: "
 read answer_push
-if [[ $answer_push == y* ]]; then
+if [[ $answer_push =~ ^[yY] ]]; then
     default_rb="origin `git symbolic-ref --short HEAD`"
     echo -n "remote/branch? [$default_rb]: "
     read push_rb
