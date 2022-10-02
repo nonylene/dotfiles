@@ -67,13 +67,12 @@ cp_local_unless_exists '.tmux.conf_local'
 
 touch_unless_exists '.bashrc_local'
 
-remove_if_exists '.xvimrc'
 remove_if_exists '.gitconfig'
 remove_if_exists '.gitignore'
 remove_if_exists '.githooks/post-commit'
 remove_if_exists '.githooks/pre-commit'
-remove_if_exists '.config/redshift.conf'
 remove_if_exists '.tigrc'
+remove_if_exists '.config/pypoetry'
 
 warn_if_exists '.gitconfig_local'
 warn_if_exists '.githooks'

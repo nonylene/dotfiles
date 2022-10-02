@@ -49,6 +49,7 @@ alias ta='tmux attach'
 setopt PRINT_EXIT_VALUE
 
 export PIPENV_VENV_IN_PROJECT=1
+export POETRY_VIRTUALENVS_IN_PROJECT="true"
 
 # history
 export HISTFILE=${HOME}/.zsh_hist

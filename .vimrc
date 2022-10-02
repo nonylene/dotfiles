@@ -100,7 +100,6 @@ Plug 'croaker/mustang-vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'itchyny/vim-cursorword'
 Plug 'tomtom/tcomment_vim'
-Plug 'tpope/vim-fugitive'
 Plug 'Vimjas/vim-python-pep8-indent'
 Plug 'nonylene/vim-keymaps'
 if v:version > 702
