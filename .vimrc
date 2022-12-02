@@ -96,7 +96,6 @@ map <C-x> <Nop>
 call plug#begin('~/.vim/plugged')
 Plug 'tomasr/molokai'
 Plug 'Raimondi/delimitMate'
-Plug 'croaker/mustang-vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'itchyny/vim-cursorword'
 Plug 'tomtom/tcomment_vim'
@@ -199,6 +198,7 @@ function! GitRelativePath()
   let head = &modified ? '* ' : (&modifiable && !&readonly)? '' : '- '
 
   try
+    " TODO
     let git_work_tree = fugitive#repo().tree()
     let rel_path = substitute(expand('%:p'), l:git_work_tree.'/', "G:", "")
   catch
