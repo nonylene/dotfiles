@@ -229,7 +229,7 @@ export PER_DIRECTORY_HISTORY_TOGGLE='^H'
 source ~/.zsh/per-directory-history/per-directory-history.zsh
 
 # ghq-cd
-## https://github.com/motemen/ghq/issues/268#issuecomment-573403493
+## https://github.com/x-motemen/ghq/issues/268#issuecomment-573403493
 function ghq-cd {
     if [ -n "$1" ]; then
         dir="$(ghq list --full-path --exact "$1")"
@@ -245,7 +245,7 @@ function ghq-cd {
     return 1
 }
 
-## https://github.com/motemen/ghq/blob/3981090302a12b29c0c96736fc0aafe5a83a109d/misc/zsh/_ghq#L63-L67
+## https://github.com/x-motemen/ghq/blob/3981090302a12b29c0c96736fc0aafe5a83a109d/misc/zsh/_ghq#L63-L67
 function _ghq-cd {
   local -a _repos
   _repos=( ${(@f)"$(_call_program repositories ghq list --unique)"} )
@@ -261,3 +261,8 @@ function gmv {
   mv $path1 $path2
   mv $HOME/.directory_history/$path1 $HOME/.directory_history/$path2
 }
+
+# Homebrew essentials
+export HOMEBREW_NO_ANALYTICS=1
+export HOMEBREW_NO_AUTO_UPDATE=1
+export HOMEBREW_NO_ENV_HINTS=1
