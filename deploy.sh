@@ -8,30 +8,23 @@ shopt -s dotglob
 
 # link file or dig new dir
 function link_file_or_recur() {
-    for f in $1/*; do
-        if [[ $f != *.swp ]]; then
-            if [[ -f $f && ! -f ~/$f ]]; then
-              ln -s ~/dotfiles/$f ~/$f
-            fi
-            if [ -d $f ]; then
-              if [ ! -d ~/$f ]; then mkdir ~/$f; fi
-              link_file_or_recur $f
-            fi
-        fi
-    done
+  file=$1
+  if [[ $file != .git ]] && [[ $file != *.swp ]]; then
+    if [[ -f $file && ! -L ~/$file ]]; then
+      ln -s ~/dotfiles/$file ~/$file
+    fi
+    if [ -d $file ]; then
+       if [ ! -d ~/$file ]; then mkdir -m 700 ~/$file; fi
+       for ff in $file/*; do
+         link_file_or_recur $ff
+       done
+    fi
+  fi
 }
 
 # dot files or directory only
 for f in .[!.]*; do
-    if [[ $f != .git ]] && [[ $f != *.swp  ]]; then
-        if [[ -f $f && ! -L ~/$f ]]; then
-          ln -s ~/dotfiles/$f ~/$f
-        fi
-        if [ -d $f ]; then
-          if [ ! -d ~/$f ]; then mkdir ~/$f; fi
-          link_file_or_recur $f
-        fi
-    fi
+  link_file_or_recur $f
 done
 
 # local configs
@@ -41,9 +34,9 @@ function touch_unless_exists() {
   fi
 }
 
-function cp_local_unless_exists() {
+function cp_copied_unless_exists() {
   if [ ! -f ~/$1 ];then
-    cp locals/$1 ~/$1
+    cp copied/$1 ~/$1
   fi
 }
 
@@ -61,9 +54,9 @@ function warn_if_exists() {
 }
 
 
-cp_local_unless_exists '.zshrc_local'
-cp_local_unless_exists '.config/git/config_local'
-cp_local_unless_exists '.tmux.conf_local'
+cp_copied_unless_exists '.zshrc_local'
+cp_copied_unless_exists '.config/git/config_local'
+cp_copied_unless_exists '.tmux.conf_local'
 
 touch_unless_exists '.bashrc_local'
 
@@ -77,6 +70,9 @@ remove_if_exists '.config/pypoetry'
 warn_if_exists '.gitconfig_local'
 warn_if_exists '.githooks'
 
+# Local bin dir
+mkdir -m 700 ~/local/bin -p
+
 # vim
 plug_file="$HOME/.vim/autoload/plug.vim"
 if [ ! -f $plug_file ];then
@@ -86,7 +82,7 @@ fi
 
 # zsh
 if [ ! -e ~/.zsh ];then
-    mkdir ~/.zsh/site-functions
+    mkdir -m 700 ~/.zsh/site-functions
     git clone https://github.com/zsh-users/zsh-syntax-highlighting ~/.zsh/zsh-syntax-highlighting
     git clone https://github.com/seebi/dircolors-solarized ~/.zsh/dircolors-solarized
     git clone https://github.com/jimhester/per-directory-history.git ~/.zsh/per-directory-history
