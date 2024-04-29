@@ -36,7 +36,7 @@ function touch_unless_exists() {
 
 function cp_copied_unless_exists() {
   if [ ! -f ~/$1 ];then
-    cp copied/$1 ~/$1
+    install -m 600 copied/$1 ~/$1
   fi
 }
 
