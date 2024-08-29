@@ -52,8 +52,10 @@
 # source <(kubectl completion zsh)
 #
 
-# # WSL open with explorer
+# # WSL
 #
 # function explorer {
 #   (cd $1 && explorer.exe .)
 # }
+#
+# ulimit -Sn 65535

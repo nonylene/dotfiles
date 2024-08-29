@@ -88,19 +88,19 @@ function dotfiles {
 export PATH="$HOME/local/bin:$HOME/.local/bin::$PATH"
 
 # gopath
-export GOPATH="${HOME}/go"
+export GOPATH="${HOME}/.go"
 export PATH="$GOPATH/bin:$PATH"
 
 # completion
 autoload -U compinit; compinit
 
-# include path etc
-[ -f ~/.zshrc_local ] && source ~/.zshrc_local
-
 zstyle ':completion:*:default' menu select=1
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 zstyle ':completion:*:processes' menu yes select=1
 zstyle ':completion:*' use-cache true
+
+# include path etc
+[ -f ~/.zshrc_local ] && source ~/.zshrc_local
 
 # ls color
 alias ls='ls --color=auto'
@@ -266,3 +266,13 @@ function gmv {
 export HOMEBREW_NO_ANALYTICS=1
 export HOMEBREW_NO_AUTO_UPDATE=1
 export HOMEBREW_NO_ENV_HINTS=1
+
+# vscode devcontainer
+# https://github.com/microsoft/vscode-remote-release/issues/2133
+alias dc-code='current_path="$(wslpath -w $PWD)" && p=$(printf "%s" "$current_path" | xxd -p) && code --folder-uri "vscode-remote://dev-container+${p//[[:space:]]/}/workspaces/$(basename $PWD)"'
+
+function clip() {
+  echo -n '\e]52;c;'
+  cat - | base64
+  echo -n '\a'
+}
