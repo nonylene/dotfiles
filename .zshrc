@@ -200,7 +200,7 @@ if [[ -z $launch_tmux ]]; then
   case "$OSTYPE" in
     darwin*)
       # do not launch tmux without iTerm2
-      [ "$TERM_PROGRAM" = 'iTerm.app' ] && launch_tmux=true
+      [[ "$TERM_PROGRAM" = 'iTerm.app' || "$TERM_PROGRAM" = 'Apple_Terminal' ]] && launch_tmux=true
       ;;
     linux*)
       # do not launch tmux without iTerm2
